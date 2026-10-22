@@ -10,6 +10,7 @@ function guideDocument(taskId='notice-date'){
   constructor(tag){this.tagName=tag;this.children=[];this.listeners={};this.hidden=false;this.disabled=false;this.open=false;this.textContent='';this.value='';}
   set id(id){this._id=id;nodes.set(id,this);}get id(){return this._id;}
   append(...children){this.children.push(...children);}
+  prepend(...children){this.children.unshift(...children);}
   setAttribute(){}addEventListener(type,fn){(this.listeners[type]??=[]).push(fn);}
   dispatchEvent(event){event.target??=this;for(const fn of this.listeners[event.type]||[])fn(event);}
   click(){if(!this.disabled)this.dispatchEvent({type:'click'});}
@@ -18,7 +19,7 @@ function guideDocument(taskId='notice-date'){
   getBoundingClientRect(){return {left:20,right:620,top:20,bottom:500};}
  }
  doc=new Element('document');doc.createElement=tag=>new Element(tag);doc.getElementById=id=>nodes.get(id);doc.documentElement={dataset:{exampleTask:taskId}};doc.body=new Element('body');
- for(const [id,value]of Object.entries({proposed:'A visitor’s unfinished answer',reason:'A visitor’s reason',contributor:'Synthetic visitor',assistance:'Actual assistance only','save-revision':''})){const node=new Element('input');node.id=id;node.value=value;}
+ for(const [id,value]of Object.entries({reading:'',proposed:'A visitor’s unfinished answer',reason:'A visitor’s reason',contributor:'Synthetic visitor',assistance:'Actual assistance only','save-revision':''})){const node=new Element('input');node.id=id;node.value=value;}
  const tab=new Element('button');tab.id='tab-reading';const host=new Element('nav');return {doc,host,nodes};
 }
 
@@ -51,7 +52,11 @@ test('Try it yourself returns to the reading field without applying an answer',(
 
 test('a changed source closes and hides the guide; a newly selected example uses its own hints',()=>{
  const {doc,host,nodes}=guideDocument();const {dialog,trigger}=installExampleWalkthrough(doc,host);trigger.click();doc.dispatchEvent({type:'reckoner-example-changed',detail:{taskId:null}});assert.equal(dialog.open,false);assert.equal(trigger.hidden,true);assert.equal(nodes.get('save-revision').textContent,'Save reading');
- doc.dispatchEvent({type:'reckoner-example-changed',detail:{taskId:'column-order'}});assert.equal(trigger.hidden,false);trigger.click();assert.equal(nodes.get('example-walkthrough-title').textContent,PRACTICE_TASKS.find(t=>t.id==='column-order').title);assert.equal(nodes.get('example-walkthrough-text').textContent,exampleSteps('column-order')[0].text);assert.equal(nodes.get('save-revision').textContent,'Save my reading');
+ assert.equal(nodes.get('example-task-prompt').hidden,true);doc.dispatchEvent({type:'reckoner-example-changed',detail:{taskId:'column-order'}});assert.equal(trigger.hidden,false);assert.equal(nodes.get('example-task-prompt').hidden,false);assert.equal(nodes.get('example-task-question').textContent,PRACTICE_TASKS.find(t=>t.id==='column-order').question);trigger.click();assert.equal(nodes.get('example-walkthrough-title').textContent,PRACTICE_TASKS.find(t=>t.id==='column-order').title);assert.equal(nodes.get('example-walkthrough-text').textContent,exampleSteps('column-order')[0].text);assert.equal(nodes.get('save-revision').textContent,'Save my reading');
+});
+
+test('the initial task identifies the machine date without presenting the answer as a saved correction',()=>{
+ const {doc,host,nodes}=guideDocument();installExampleWalkthrough(doc,host);assert.equal(nodes.get('example-task-prompt').hidden,false);assert.match(nodes.get('example-task-question').textContent,/machine reading of 14 June 1912/);assert.doesNotMatch(nodes.get('example-task-question').textContent,/17 June/);assert.equal(nodes.get('proposed').value,'A visitor’s unfinished answer');
 });
 
 test('only a click outside the dialog bounds dismisses the guide',()=>{

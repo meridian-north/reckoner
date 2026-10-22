@@ -1,3 +1,6 @@
+2026-10-22 — Clearer first exercise and compact example header
+John Reed reported that the relation between the printed date and supplied machine text was easy to miss. A visible Your task prompt now explains the comparison and the initially copied reading. Walk me through is a prominent green action. App controls and example navigation share one row at wider sizes and wrap on smaller screens. An expanded page overview offers Enlarge highlighted passage to reset the view. Exercises remain unfinished; view controls do not edit answers or source bytes. Human acceptance is still pending.
+
 2026-10-22 — Optional walkthroughs for all 14 live examples
 Each unfinished exercise offers two source-specific hints, an AI-written proposed answer, saving guidance and a plain-language explanation of file fingerprints and history links. Opening a guide does not fill fields, save a reading or award human credit. Answers remain in the visitor’s browser, with an explicit downloadable history backup; nothing is written back to GitHub. Keyboard focus, dismissal, preserved drafts and save/export/reopen/replay were checked in isolated Chrome sessions. Automated checks do not constitute human acceptance.
 

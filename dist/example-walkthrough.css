@@ -9,3 +9,16 @@
 #example-walkthrough button{min-height:44px;padding:8px 14px;font:inherit}
 #example-walkthrough :focus-visible,#example-walkthrough-open:focus-visible{outline:3px solid #b36c00;outline-offset:3px}
 @media(max-width:480px){#example-walkthrough{padding:18px}.example-walkthrough-actions{gap:8px}}
+#example-walkthrough-open{background:var(--accent,#245c4d);color:#fff;border:1px solid var(--accent,#245c4d);font-weight:700;padding:8px 12px;white-space:nowrap}
+#example-walkthrough-open:hover{filter:brightness(.9)}
+#example-task-prompt{padding:8px 12px;margin:0 0 8px;border-left:4px solid var(--accent,#245c4d);background:var(--soft,#eaf0e8);color:var(--ink,#243c34);font-size:14px;line-height:1.4}
+#example-task-prompt[hidden]{display:none}
+#example-task-prompt strong{float:left;margin-right:10px}
+#example-task-prompt p{margin:0}
+#example-task-prompt p:last-child{clear:both;font-size:13px;margin-top:3px}
+body>header #sample-navigation{padding:0;gap:6px;flex:0 0 auto;flex-wrap:nowrap;margin:0}
+body>header #sample-navigation span{font-size:13px;white-space:nowrap}
+body>header #sample-navigation a{font-size:13px;padding:7px 8px;white-space:nowrap}
+@media(min-width:1200px){body>header:has(#sample-navigation){flex-wrap:nowrap}body>header:has(#sample-navigation) .wordmark{font-size:21px}body>header:has(#sample-navigation) #oc-start{flex-wrap:nowrap;gap:4px}body>header:has(#sample-navigation) #oc-start a,body>header:has(#sample-navigation) #oc-start button{font-size:13px;padding:7px 8px;white-space:nowrap}}
+@media(max-width:1199px){body>header:has(#sample-navigation){flex-wrap:wrap!important}body>header #sample-navigation{order:2;width:100%;flex-wrap:wrap}body>header:has(#sample-navigation) #oc-start{order:0}}
+@media(max-width:650px){body>header #sample-navigation{order:2;width:100%}body>header #oc-start{order:3}#example-task-prompt{font-size:14px}}

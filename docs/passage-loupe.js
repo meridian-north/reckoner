@@ -6,10 +6,11 @@ export function installPassageLoupe(doc=document){
  const heading=doc.createElement('strong');heading.textContent='Highlighted source';heading.title='Highlighted passage from the original image';const canvas=doc.createElement('canvas');canvas.id='passage-loupe-canvas';canvas.setAttribute('role','img');
  const caption=doc.createElement('p');caption.id='passage-loupe-caption';caption.textContent='The small page at left keeps your place. The enlarged passage uses the same original image.';
  const toggle=doc.createElement('button');toggle.type='button';toggle.id='passage-loupe-toggle';toggle.textContent='Whole page';toggle.setAttribute('aria-label','Show whole page larger');
+ const reset=doc.createElement('button');reset.type='button';reset.id='reset-passage-view';reset.textContent='Enlarge highlighted passage';reset.hidden=true;reset.addEventListener('click',()=>resize(18));
  const divider=doc.createElement('div');divider.id='source-pane-divider';divider.hidden=true;divider.tabIndex=0;divider.setAttribute('role','separator');divider.setAttribute('aria-orientation','vertical');divider.setAttribute('aria-label','Resize page overview and highlighted passage');divider.setAttribute('aria-controls','image-stage passage-loupe');divider.title='Drag to resize · arrow keys adjust · Home resets';
- panel.append(heading,canvas,caption,toggle);visuals.append(divider,panel);
+ panel.append(heading,canvas,caption,reset,toggle);visuals.append(divider,panel);
  let split=18;
- function resize(value){split=Math.max(12,Math.min(75,value));visuals.style.setProperty('--overview-share',split+'%');divider.setAttribute('aria-valuemin','12');divider.setAttribute('aria-valuemax','75');divider.setAttribute('aria-valuenow',String(Math.round(split)));divider.setAttribute('aria-valuetext',Math.round(split)+' percent page overview');requestAnimationFrame(draw);}
+ function resize(value){split=Math.max(12,Math.min(75,value));reset.hidden=split<=35;visuals.style.setProperty('--overview-share',split+'%');divider.setAttribute('aria-valuemin','12');divider.setAttribute('aria-valuemax','75');divider.setAttribute('aria-valuenow',String(Math.round(split)));divider.setAttribute('aria-valuetext',Math.round(split)+' percent page overview');requestAnimationFrame(draw);}
  resize(split);
  divider.addEventListener('keydown',event=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;event.preventDefault();resize(event.key==='Home'?18:event.key==='End'?75:split+(event.key==='ArrowRight'?1:-1)*(event.shiftKey?10:3));});
  let drag=null;

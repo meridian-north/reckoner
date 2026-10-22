@@ -1,4 +1,4 @@
-import {installExampleWalkthrough} from './example-walkthrough.js';
+import {installExampleWalkthrough} from './example-walkthrough.js?v=first-view-1';
 import {PRACTICE_TASKS} from './practice-tasks.js';
 const d=document,g=id=>d.getElementById(id),h=d.querySelector('body>header');
 const menu=d.createElement('details');menu.id='oc-tools';const s=d.createElement('summary');s.textContent='More · help & tools';const c=d.createElement('div');c.id='oc-tools-content';menu.append(s,c);h.append(menu);
@@ -34,7 +34,7 @@ const params=new URL(location.href).searchParams,current=samples.findIndex(x=>x[
 const session=params.get('practiceSession')||crypto.randomUUID();
 function sampleLink(index,label,separate=false){const a=d.createElement('a');a.className='quiet';a.textContent=label;const u=new URL('index.html',location.href);u.searchParams.set('practice',samples[index][0]);u.searchParams.set('practiceSession',session);a.href=u.href;if(separate){a.target='_blank';a.rel='noopener';}return a;}
 const tryButton=[...nav.querySelectorAll('button')].find(x=>x.textContent==='Try an example');if(tryButton)tryButton.replaceWith(sampleLink(0,'Browse examples',true));
-if(current>=0){const browse=d.createElement('nav');browse.id='sample-navigation';browse.setAttribute('aria-label','Browse examples');if(current>0)browse.append(sampleLink(current-1,'← Previous'));const count=d.createElement('span');count.textContent='Example '+(current+1)+' of '+samples.length+' · '+samples[current][1];browse.append(count);if(current<samples.length-1)browse.append(sampleLink(current+1,'Next example →'));else browse.append(sampleLink(0,'Back to first'));nav.after(browse);}
+if(current>=0){const browse=d.createElement('nav');browse.id='sample-navigation';browse.setAttribute('aria-label','Browse examples');if(current>0)browse.append(sampleLink(current-1,'← Previous'));const count=d.createElement('span');count.textContent='Example '+(current+1)+' of '+samples.length;count.title=samples[current][1];browse.append(count);if(current<samples.length-1)browse.append(sampleLink(current+1,'Next example →'));else browse.append(sampleLink(0,'Back to first'));h.insertBefore(browse,menu);}
 
 // One header and one tools menu; retain each action's existing handler.
 s.textContent='More';h.insertBefore(nav,menu);

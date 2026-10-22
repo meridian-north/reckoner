@@ -1,7 +1,7 @@
 import {practiceTask} from './practice-tasks.js';
 
 const HINTS=Object.freeze({
- 'notice-date':['Look at the meeting date inside the orange box. Compare its last digit with the machine reading.','Keep the month, year and surrounding sentence. Change only what the image supports.'],
+ 'notice-date':['The machine text says “14 June 1912”. Compare that with the boxed date in the printed notice. Check the final digit.','Your reading starts as a copy of the machine text. Keep the month, year and surrounding sentence; change only what the image supports.'],
  'retention-word':['Look closely at the middle of the word after “the”. One narrow letter may have been mistaken for another.','Use the printed letter and the surrounding sentence together. A familiar word is a clue, not proof by itself.'],
  'signature-date':['Read the date below the clerk’s signature, rather than the meeting date higher on the page.','Compare the last letter of the month. Explain which date you checked so another reader can find it.'],
  'hyphen-join':['The word continues on the next printed line. Try reading the two pieces together.','Ask whether the hyphen only marks a line ending. Keep the original image; your reading can join the word.'],
@@ -32,7 +32,9 @@ export function exampleSteps(id){
 // A viewing aid only: no review-field, storage or history writes.
 export function installExampleWalkthrough(doc,host){
  const make=tag=>doc.createElement(tag),get=id=>doc.getElementById(id);
- const trigger=make('button');trigger.id='example-walkthrough-open';trigger.type='button';trigger.className='quiet';trigger.textContent='Walk me through';trigger.hidden=true;trigger.setAttribute('aria-haspopup','dialog');trigger.setAttribute('aria-controls','example-walkthrough');host.append(trigger);
+ const trigger=make('button');trigger.id='example-walkthrough-open';trigger.type='button';trigger.textContent='Walk me through';trigger.hidden=true;trigger.setAttribute('aria-haspopup','dialog');trigger.setAttribute('aria-controls','example-walkthrough');host.append(trigger);
+ const prompt=make('section');prompt.id='example-task-prompt';prompt.hidden=true;prompt.setAttribute('aria-labelledby','example-task-question');
+ const taskLabel=make('strong');taskLabel.textContent='Your task';const taskQuestion=make('p');taskQuestion.id='example-task-question';const taskHelp=make('p');taskHelp.textContent='Your reading starts as a copy of the machine text. Check the highlighted image, then change or keep that reading. Use Walk me through for hints.';prompt.append(taskLabel,taskQuestion,taskHelp);get('reading')?.prepend(prompt);
  const dialog=make('dialog');dialog.id='example-walkthrough';dialog.setAttribute('aria-labelledby','example-walkthrough-title');
  const heading=make('h2');heading.id='example-walkthrough-title';
  const label=make('p');label.className='helper';label.textContent='Optional hints · AI-written synthetic example';
@@ -47,7 +49,7 @@ export function installExampleWalkthrough(doc,host){
  let task=null,steps=[],index=0,returnToReading=false;
  const render=()=>{const step=steps[index];heading.textContent=task.title;status.textContent='Step '+(index+1)+' of '+steps.length;stepHeading.textContent=step.title;text.textContent=step.text;answer.hidden=!step.answer;answer.textContent=step.answer||'';previous.disabled=index===0;next.textContent=index===steps.length-1?'Try it yourself':'Next hint';stepHeading.focus();};
  const finish=()=>{returnToReading=true;dialog.close();};
- const select=id=>{let selected=null;try{if(id)selected=practiceTask(id);}catch{}if(dialog.open)dialog.close();task=selected;steps=task?exampleSteps(task.id):[];trigger.hidden=!task;const save=get('save-revision');if(save)save.textContent=task?'Save my reading':'Save reading';};
+ const select=id=>{let selected=null;try{if(id)selected=practiceTask(id);}catch{}if(dialog.open)dialog.close();task=selected;steps=task?exampleSteps(task.id):[];trigger.hidden=!task;prompt.hidden=!task;if(task)taskQuestion.textContent=task.question||({'notice-date':'Does the boxed meeting date match the machine reading of 14 June 1912?','retention-word':'Check the boxed word: does the image agree with “orlginal” in the machine text?','signature-date':'Check the signature date below Council clerk: does the month agree with “Juno” in the machine text?'}[task.id]||task.title);const save=get('save-revision');if(save)save.textContent=task?'Save my reading':'Save reading';};
  trigger.addEventListener('click',()=>{if(!task)return;index=0;returnToReading=false;dialog.showModal();render();});
  previous.addEventListener('click',()=>{if(index>0){index--;render();}});
  next.addEventListener('click',()=>{if(index===steps.length-1)finish();else{index++;render();}});

@@ -3,14 +3,14 @@
   "files": [
     {
       "file": "Reckoner_Contribution_Review.zip",
-      "bytes": 860185,
-      "sha256": "af08928d4798c99bad117083fddcc6576051f69811622ccdf853da9154fe67e5",
+      "bytes": 861646,
+      "sha256": "8dbae899675f95a880cc4629876a580c74abcfce3c3333b1b177513b46009e4c",
       "scope": "Standalone review prototype source bundle"
     },
     {
       "file": "USER_GUIDE.md",
-      "bytes": 49151,
-      "sha256": "9aa99bd15a1a57147c282aff5234c2b1246630b3d38573f753aea940249fc65d",
+      "bytes": 49599,
+      "sha256": "244b2571318f541ccfb24261f8728ab28075df30b6c94437d904b399dca9a292",
       "scope": "Quick-start guide"
     },
     {

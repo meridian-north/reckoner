@@ -4,7 +4,7 @@ The browser demo opens the first of 14 synthetic examples automatically on a fir
 
 ## Main workspace
 
-The header offers **New file**, **Open saved review**, **Examples**, **Save to file** and one **More** menu. On narrow screens, New file and Open saved review move into More; on the narrowest screens Save to file moves there too. New file creates a separate browser workspace; it does not delete the previous one. Browser Back can return to that workspace. Exported backups remain the durable recovery copy.
+The header combines app controls and example navigation in one row when the window is wide enough. Smaller screens wrap the controls so they remain reachable. A green **Walk me through** button opens optional hints; **Your task** above the comparison explains what to check and why the editable reading starts as a copy. The header offers **New file**, **Open saved review**, **Examples**, **Save to file** and one **More** menu. On narrow screens, New file and Open saved review move into More; on the narrowest screens Save to file moves there too. New file creates a separate browser workspace; it does not delete the previous one. Browser Back can return to that workspace. Exported backups remain the durable recovery copy.
 
 Use **Choose source file** in the source area, or drop one supported file there. JPEG, PNG, WebP and PDF are limited to 20 MB. UTF-8 TXT, HTML, HTM and XML are limited to 200 KB. Text is displayed literally: HTML scripts, images, links and XML entity references do not execute or fetch. HTML/XML are not rendered as live webpages. Unsupported, binary or invalid UTF-8 inputs are refused. Original source bytes remain separate from the review bundle.
 
@@ -62,7 +62,7 @@ The hOCR passage list pairs words with saved proposals. Amber means not worked; 
 
 For large pages, the card list shows the first 50 words plus saved passages. The selector and navigation still reach all parsed words. Ordinary OCR words are candidates for inspection, not automatically reported errors. This list is separate from the catalogue of reported source problems.
 
-Whole-page view follows the loaded image’s aspect ratio on desktop. Read highlighted passage switches back to the enlarged region with the page overview beside it. Drag the divider between the page overview and enlarged passage to give either more room. Keyboard users can Tab to the divider and use Left/Right arrows (Shift for larger changes); Home or a double-click resets the split, and End expands the overview. Viewing changes do not alter original bytes.
+Whole-page view follows the loaded image’s aspect ratio on desktop. Read highlighted passage switches back to the enlarged region with the page overview beside it. Drag the divider between the page overview and enlarged passage to give either more room. Keyboard users can Tab to the divider and use Left/Right arrows (Shift for larger changes); Home or a double-click resets the split, and End expands the overview. If the overview takes most of the space, **Enlarge highlighted passage** restores the small overview and larger source detail. Viewing changes do not alter original bytes.
 
 ## Ask someone to check your work
 
