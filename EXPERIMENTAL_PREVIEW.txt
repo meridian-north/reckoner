@@ -1,4 +1,4 @@
-Reckoner experimental Alpha - October 21, 2026
+Reckoner experimental Alpha - updated October 22, 2026
 
 Record an interpretation. Let others check it.
 
@@ -6,10 +6,10 @@ Scope
 Compare a retained source with supplied text or a claim. Save a proposed reading, evidence, uncertainty, credit and a self-declared AI assistance note. Preserve separate reviews and history. This is an invitation to test, comment and contribute; no institutional endorsement is claimed. Fourteen practice exercises are synthetic, not an accuracy benchmark.
 
 Start
-Serve dist/ with a local static server and open index.html. Choose Examples to try bundled exercises, or More then Open a review pack for MODULE.json and an extracted source folder. The stable operator starting point is http://127.0.0.1:53022/index.html; that address is local, not a public link.
+Open https://meridian-north.github.io/reckoner/ for the public demo. A first visit starts the first of fourteen unfinished synthetic examples. Walk me through gives optional hints, a proposed answer and explanations without completing or saving your exercise. For a downloaded copy, serve dist/ with a local static server and open index.html. Choose Examples to browse, or More then Open a review pack for MODULE.json and an extracted source folder. The stable operator starting point is http://127.0.0.1:53022/index.html; that address is local, not a public link.
 
 Save and reopen
-Save reading stores a version on this browser origin. Save to file downloads the complete JSON history; check Downloads for delivery. Open saved review reopens it. Keep original source files and hOCR separately. A valid older backup may offer explicit adoption of the verified latest locally retained history. Cancel preserves the draft. Do not clear site data to bypass a trust conflict.
+Save reading (Save my reading in examples) stores a version on this browser origin. Answers and saved readings are not written back to GitHub or the shared example files. Save to file downloads the complete JSON history to your device; check Downloads for delivery. Open saved review reopens it. A shared page link does not carry your edits. Keep original source files and hOCR separately. A valid older backup may offer explicit adoption of the verified latest locally retained history. Cancel preserves the draft. Do not clear site data to bypass a trust conflict.
 
 Known limits
 The native evidence dropdown closing on pointer movement remains unconfirmed. Full native accessibility, VoiceOver speech and Windows qualification are incomplete. Some compact forms require scrolling to reach fields. Source files and images are not embedded in history backups; browser storage is not an independent backup. Identities, roles and assistance declarations are self-declared. The application does not recognize OCR, determine truth or establish source reuse rights.

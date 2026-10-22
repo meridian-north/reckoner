@@ -10,6 +10,8 @@ Names and roles in review records are self-declared. Support does not provide le
 
 Before reporting a save or reopen problem
 
+The public demo supplies shared application and example files. Your exercise drafts and saved readings stay in your browser; they are not written back to GitHub. Choose Walk me through beside any built-in example for optional hints and saving explanations. Its proposed answer is AI-written; it does not complete or save the exercise for you. In examples, Save my reading records your own work. Save to file downloads its history for personal backup and exchange. A page URL alone does not share edits.
+
 - Keep the original source file and the JSON history backup separately. Do not clear browser/site data as a first troubleshooting step.
 - Record the browser and OS version, the exact button and message, and whether a JSON file appeared in Downloads. A requested download is not proof of completed delivery.
 - If the app offers unsaved-draft recovery, download it privately before replacing or reopening work. Use one editing tab per workspace.

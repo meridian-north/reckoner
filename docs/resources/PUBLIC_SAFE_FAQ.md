@@ -4,6 +4,14 @@
 
 It helps you compare a source with a reading or claim, explain a proposed interpretation, and save a record another person can check. Earlier readings, reviews and disagreement stay visible. Search notes help you record what you tried before choosing a source.
 
+## How do I try the examples?
+
+Open [the browser demo](https://meridian-north.github.io/reckoner/). A first visit starts the first of fourteen unfinished synthetic exercises. Choose **Walk me through** for optional hints, one AI-written proposed answer and explanations of saving and file checks. Opening the guide does not fill fields, save decisions or assign human credit. Use **Next example** and **Previous** to browse. You can keep a reading unchanged or leave a question uncertain when that is what the source supports.
+
+## Will my answers change the GitHub examples?
+
+No. Drafts and saved readings stay in your own browser; Reckoner does not write them back to GitHub. **Save my reading** records your own example reading locally. **Save to file** downloads its complete history to your device so you can reopen it with **Open saved review**. Keep that backup and source files separately. A shared page link does not carry your edits. Clearing browser data or switching browser/device can make local work unavailable; an exported history is the portable copy.
+
 ## Do I need a language model?
 
 No. People can compare, explain, review, mentor and exchange records without one. Optional copy/export handoff lets you consult your own model separately; the form makes no model API request.
@@ -22,7 +30,7 @@ No. A local review records what a person checked and decided. It does not establ
 
 ## What should I save?
 
-For a resumable backup, choose **More → Save to file**. For a readable portable correction record, choose **More → Export contribution receipt**. Keep the original source files and any enhanced copies separately. They are not embedded in the record. Reopen matching files to resume visual comparison. Text and PDF are readable reports; the main form’s readings CSV is an index. The downloads page offers application materials; it does not export your personal review. The bundle’s offline downloads page intentionally omits the ZIP itself. Use **Save readable search notes** for a text report, and keep the JSON from **Save search notes** for reopening and digest checking. Browser drafts are not backups, and search notes should be exported before closing their tab.
+For a resumable backup, choose header **Save to file**, or find it under **More** on narrow screens. The optional **Export contribution receipt** is a readable latest receipt, not the full history backup. Keep the original source files and any enhanced copies separately. They are not embedded in the record. Reopen matching files to resume visual comparison. Text and PDF are readable reports; the main form’s readings CSV is an index. The downloads page offers application materials; it does not export your personal review. The bundle’s offline downloads page intentionally omits the ZIP itself. Use **Save readable search notes** for a text report, and keep the JSON from **Save search notes** for reopening and digest checking. Browser drafts are not backups, and search notes should be exported before closing their tab.
 
 ## What are contexts and viewing lenses?
 
