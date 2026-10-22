@@ -6,7 +6,7 @@ import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
 FILES = (
-    'dist/demo-startup.js', 'tests/demo-startup.test.mjs',
+    'dist/demo-startup.js', 'tests/demo-startup.test.mjs', 'tests/source-review-packs.test.mjs',
     'dist/data-module.js', 'dist/data-module.html', 'dist/data-module-ui.js', 'dist/module-intake.js', 'tests/data-module.test.mjs', 'tests/data-module-lifecycle.test.mjs', 'tests/module-intake.test.mjs', 'scripts/data-module-walkthrough.cjs', 'scripts/compact-reading-walkthrough.cjs', 'PRACTICE_DATA_MODULES.md', 'dist/reading-first.js', 'dist/text-source.js', 'tests/text-source.test.mjs', 'tests/source-preflight.test.mjs', 'scripts/source-preflight-walkthrough.cjs', 'dist/source-reading-lock.js', 'tests/source-reading-lock.test.mjs', 'dist/practice-source-pins.js', 'dist/practice-queue-entry.js', 'tests/practice-queue-entry.test.mjs', 'scripts/practice-batch-walkthrough.mjs',
     'dist/practice-hyphen-join.svg', 'dist/practice-hyphen-glyph.svg', 'dist/practice-proper-name.svg', 'dist/practice-fragment-join.svg', 'dist/practice-historic-spelling.svg', 'dist/practice-sidebar-reflow.svg', 'dist/practice-column-order.svg', 'dist/practice-note-attribution.svg', 'dist/practice-intentional-hyphen.svg', 'dist/practice-ambiguous-layout.svg', 'dist/practice-quote-normalization.svg',
     'scripts/local-hocr-format-check.mjs',

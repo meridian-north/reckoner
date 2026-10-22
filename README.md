@@ -4,6 +4,18 @@ Experimental Alpha for testers and contributors. Record an interpretation. Let o
 
 **[Open Reckoner — 14 live examples](https://meridian-north.github.io/reckoner/)**. A first visit opens Example 1 automatically; use **Next example** and **Previous** to browse. Returning saved work is preserved. Choose **New file** to start your own review.
 
+### Three small source-review packs
+
+Each ZIP contains one source, two review questions, a contents list, opening instructions, credits and checksums. These are **open educational review exercises**, not confirmed archive errors or completed arbitrations.
+
+| Pack | Download size | Source |
+| --- | ---: | --- |
+| [Wildlife ZIP](https://meridian-north.github.io/reckoner/resources/Reckoner_Wildlife_Review.zip) | 77 KB | Audubon painting; Smithsonian CC0 image |
+| [Brownfields ZIP](https://meridian-north.github.io/reckoner/resources/Reckoner_Brownfields_Review.zip) | 236 KB | Two-page EPA fact sheet; educational-use conditions |
+| [Territorial ZIP](https://meridian-north.github.io/reckoner/resources/Reckoner_Territorial_Review.zip) | 2.1 MB | 1881 Dakota postal map; Library of Congress / Wikimedia public-domain reproduction |
+
+Extract a ZIP, then [open a review pack](https://meridian-north.github.io/reckoner/data-module.html), choose its **MODULE.json**, and choose its extracted source folder. Check **RIGHTS.txt** before reuse; third-party sources have their own conditions. No source-host requests are made during review.
+
 Start with the [quick-start guide](USER_GUIDE.md) for a first review, file sharing, and saving your work.
 
 A document review form developed by John Reed and Garrison Node / Meridian North. Compare a source with a reading or claim, record interpretations and decisions, and replay the saved path to resolution. The core workflow needs no LLM.

@@ -3,8 +3,8 @@
   "files": [
     {
       "file": "Reckoner_Contribution_Review.zip",
-      "bytes": 848747,
-      "sha256": "4c8c069ac5dc8d0ca5445437aa8264fbbc70f8df9924c0a8927fe3eeb2b46759",
+      "bytes": 850900,
+      "sha256": "791babae56a09d24cad25111c7bc30bcfc7ce20196a19edc22e546fe2d3a3f96",
       "scope": "Standalone review prototype source bundle"
     },
     {
@@ -36,6 +36,21 @@
       "bytes": 13221,
       "sha256": "ba8b5e00afa852e319b132c37dcc56492b5379de651e721810d53739d3a000bf",
       "scope": "Human review pilot proposal; collection attachment and reading-list service remain proposed"
+    },
+    {
+      "file": "Reckoner_Wildlife_Review.zip",
+      "bytes": 79226,
+      "sha256": "57861c1b0754b5167df1fbad5c556b558e047b1cb57d20c1005fe2274f05d8fc"
+    },
+    {
+      "file": "Reckoner_Brownfields_Review.zip",
+      "bytes": 241283,
+      "sha256": "72b3847d4ae17f7bbc67d91a02ca43a067c21af160332d524a2612575349c4d9"
+    },
+    {
+      "file": "Reckoner_Territorial_Review.zip",
+      "bytes": 2254298,
+      "sha256": "81ecaa74b890f64c87b402e19365ebda40b3c54f12fd39187f68378895b64ce6"
     }
   ],
   "scope": "Independent contribution materials; hashes check bytes, not identity or approval."

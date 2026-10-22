@@ -7,3 +7,10 @@ The optional context token budget checker includes @huggingface/tokenizers 0.2.0
 under Apache-2.0. See dist/HF_TOKENIZERS_LICENSE.txt and
 dist/HF_TOKENIZERS_PROVENANCE.json. Model weights and tokenizer data are not
 shipped; selected local tokenizer files are verified against pinned hashes.
+
+Optional source-review packs (separate ZIP downloads)
+The wildlife image, EPA fact sheet and territorial map reproduction are third-party
+source materials with the credits and reuse conditions in each pack's RIGHTS.txt
+and PROVENANCE.json. The Reckoner code MIT license does not relicense those sources.
+The prompts are AI-written educational review questions, not confirmed archive
+errors or institutional rulings. No source institution endorses Reckoner.
