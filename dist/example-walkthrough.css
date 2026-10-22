@@ -1,0 +1,11 @@
+#example-walkthrough{width:min(620px,calc(100vw - 32px));max-height:calc(100dvh - 32px);box-sizing:border-box;overflow:auto;padding:24px;border:1px solid #b8c8bf;border-radius:8px;background:var(--paper,#faf9f4);color:var(--ink,#243c34);font:17px/1.6 system-ui,sans-serif}
+#example-walkthrough::backdrop{background:rgb(15 30 24 / 45%)}
+#example-walkthrough h2{font-size:23px;margin:0 0 8px}
+#example-walkthrough h3{font-size:20px;line-height:1.35;margin:18px 0 8px}
+#example-walkthrough p{margin:8px 0}
+#example-walkthrough-status{font-weight:650}
+#example-walkthrough-answer{white-space:pre-wrap;overflow-wrap:anywhere;padding:12px;background:#f0f2eb;border:1px solid #c7d1c9;font:16px/1.5 ui-monospace,monospace}
+.example-walkthrough-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+#example-walkthrough button{min-height:44px;padding:8px 14px;font:inherit}
+#example-walkthrough :focus-visible,#example-walkthrough-open:focus-visible{outline:3px solid #b36c00;outline-offset:3px}
+@media(max-width:480px){#example-walkthrough{padding:18px}.example-walkthrough-actions{gap:8px}}

@@ -1,3 +1,4 @@
+import {installExampleWalkthrough} from './example-walkthrough.js';
 import {PRACTICE_TASKS} from './practice-tasks.js';
 const d=document,g=id=>d.getElementById(id),h=d.querySelector('body>header');
 const menu=d.createElement('details');menu.id='oc-tools';const s=d.createElement('summary');s.textContent='More · help & tools';const c=d.createElement('div');c.id='oc-tools-content';menu.append(s,c);h.append(menu);
@@ -73,7 +74,7 @@ for(const id of ['quick-example','example-image']){const node=g(id);if(node)node
 
 const moduleLink=d.createElement('a');moduleLink.href='data-module.html';moduleLink.textContent='Open a review pack';c.append(moduleLink);
 
-if(current>=0){const guide=d.createElement('details'),label=d.createElement('summary');label.textContent='Example explanation · AI-written';guide.append(label);const after=d.createElement('p');after.textContent='One proposed reading: '+PRACTICE_TASKS[current].proposed;const reason=d.createElement('p');reason.textContent=PRACTICE_TASKS[current].reason;guide.append(after,reason);c.append(guide);}
+if(current>=0)installExampleWalkthrough(d,g('sample-navigation'));
 // Narrow headers keep one clear row; the same actions move into More, never clone.
 const openBackupButton=[...nav.querySelectorAll('button')].find(b=>b.textContent==='Open saved review');
 const narrowHeader=matchMedia('(max-width:620px)');

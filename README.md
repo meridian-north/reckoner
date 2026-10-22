@@ -2,7 +2,7 @@
 
 Experimental Alpha for testers and contributors. Record an interpretation. Let others check it. Feedback, reproducible bug reports and contributions are welcome. Keep original source files and exported review histories independently. See [known limits](EXPERIMENTAL_PREVIEW.txt).
 
-**[Open Reckoner — 14 live examples](https://meridian-north.github.io/reckoner/)**. A first visit opens Example 1 automatically; use **Next example** and **Previous** to browse. Returning saved work is preserved. Choose **New file** to start your own review.
+**[Open Reckoner — 14 live examples](https://meridian-north.github.io/reckoner/)**. A first visit opens Example 1 automatically; use **Next example** and **Previous** to browse. Each exercise starts unfinished. **Walk me through** offers optional hints, an AI-written proposed answer and a plain-language explanation of saving. It leaves your fields and history unchanged. **Save my reading** records your own decision; **Save to file** downloads its portable history. Draft edits stay in this browser for that example session, so sharing a page link does not share your work. Returning saved work is preserved. Choose **New file** to start your own review. Answers stay in the visitor’s browser; Reckoner does not write them back to GitHub or change the shared examples.
 
 ### Three small source-review packs
 

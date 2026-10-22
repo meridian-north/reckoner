@@ -2,6 +2,10 @@
 
 Reckoner currently contains 14 AI-written synthetic exercises. They illustrate repair categories recovered from early Reckoner work; they are not facsimiles of historical documents, independent human rulings, or demonstrations of automatic detection.
 
+## Work through the built-in examples
+
+The main demo starts an unfinished example on a first visit. Each of the 14 has a Walk me through button with source-specific hints, a proposed answer, and plain-language saving guidance. The answer is AI-written and can be challenged. Opening or closing the guide never fills in fields, saves a reading, or records a human decision. Save my reading records the visitor’s own work. Draft edits are browser-local for the example session; Save to file exports the portable history. Sharing a link does not share those edits. Answers stay in the visitor’s browser; Reckoner does not write them back to GitHub or change the shared examples.
+
 ## Open a batch with its own files
 
 More → Open a data-module queue opens the generic `reckoner.data-module.v1` importer. Choose MODULE.json, then the extracted folder (including its sources subfolder), or choose the matching file for the current item. Previous/Next browse up to 200 tasks. Open review creates a fresh separate workspace each time; earlier drafts remain intact. Keep the queue tab open until the source handoff completes.

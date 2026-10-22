@@ -1,3 +1,6 @@
+2026-10-22 — Optional walkthroughs for all 14 live examples
+Each unfinished exercise offers two source-specific hints, an AI-written proposed answer, saving guidance and a plain-language explanation of file fingerprints and history links. Opening a guide does not fill fields, save a reading or award human credit. Answers remain in the visitor’s browser, with an explicit downloadable history backup; nothing is written back to GitHub. Keyboard focus, dismissal, preserved drafts and save/export/reopen/replay were checked in isolated Chrome sessions. Automated checks do not constitute human acceptance.
+
 2026-10-21 — Experimental-preview menu cleanup
 Compact More action list; one actual Backup control moves with screen width. Full guidance/recovery lives in a native dialog. Distinct source/reading accessible names. Success imports dismiss guidance and focus the reading; failed/empty imports preserve dialog. Experimental preview remains private pending human acceptance and exact release approval.
 

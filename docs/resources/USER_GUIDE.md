@@ -1,6 +1,6 @@
 # Reckoner: record an interpretation, let others check it
 
-The browser demo opens the first of 14 synthetic examples automatically on a first visit. Use Next example and Previous to browse, or New file for your own source. Existing saved work is preserved.
+The browser demo opens the first of 14 synthetic examples automatically on a first visit. Each begins unfinished. Choose Walk me through for optional hints, a proposed answer and an explanation of what is saved. The guide does not complete or save the exercise for you. Use Save my reading for your own decision, then Save to file for a portable backup. A page link alone does not carry your edits. Use Next example and Previous to browse, or New file for your own source. Existing saved work is preserved. Answers stay in the visitor’s browser; Reckoner does not write them back to GitHub or change the shared examples.
 
 ## Current private workspace
 
