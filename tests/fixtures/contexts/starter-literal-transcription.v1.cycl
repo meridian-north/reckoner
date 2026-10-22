@@ -1,0 +1,41 @@
+;;; Reckoner public context definition
+;;; Readable CycL subset: declarative assertions only. Nothing in this file is executed.
+;;; Section 1. Identity and inheritance
+(contextFormat ReckonerStarterLiteralTranscriptionMt "reckoner.context.cycl.v0.1")
+(isa ReckonerStarterLiteralTranscriptionMt Microtheory)
+(contextId ReckonerStarterLiteralTranscriptionMt "ctx:starter:literal-transcription")
+(contextVersion ReckonerStarterLiteralTranscriptionMt 1)
+(contextName ReckonerStarterLiteralTranscriptionMt "Literal transcription")
+;;; Section 2. Header provenance
+(contextAuthor ReckonerStarterLiteralTranscriptionMt "Reckoner starter examples")
+(contextCreatedAt ReckonerStarterLiteralTranscriptionMt "2026-10-15T00:00:00.000Z")
+(contextReleaseLabel ReckonerStarterLiteralTranscriptionMt "starter_example")
+(provenanceBasis ReckonerStarterLiteralTranscriptionMt "newly_authored")
+(provenanceStatement ReckonerStarterLiteralTranscriptionMt "Newly written in October 2026 as a starter example for the public Reckoner form, without access to private Garrison Node definitions and without OpenCyc content. Not endorsed by Internet Archive and not promoted for Garrison Node production use. Adapt it, derive a narrower context from it, or write your own.")
+(comment ReckonerStarterLiteralTranscriptionMt "Record exactly what the source shows, character for character, so that another person comparing your reading with the same copy reaches the same text. Keep spelling, punctuation, capitalization, abbreviations and line breaks as they appear, even when they look wrong today. A literal reading may correct a machine reading, but never the author: errors in the source stay in the transcription and are discussed in the reason. Anything that cannot be read with confidence is marked rather than guessed.")
+(contextFacet ReckonerStarterLiteralTranscriptionMt "work" "transcription")
+(contextFacet ReckonerStarterLiteralTranscriptionMt "media" "handwriting")
+(contextFacet ReckonerStarterLiteralTranscriptionMt "media" "image")
+(contextFacet ReckonerStarterLiteralTranscriptionMt "media" "pdf")
+(contextFacet ReckonerStarterLiteralTranscriptionMt "media" "print")
+(fiveWOneHEmphasis ReckonerStarterLiteralTranscriptionMt "what")
+(fiveWOneHEmphasis ReckonerStarterLiteralTranscriptionMt "where")
+;;; Section 3. Active concepts
+(activeConcept ReckonerStarterLiteralTranscriptionMt "literal reading" "The characters the source shows, in their order, without modernizing or correcting them.")
+(activeConcept ReckonerStarterLiteralTranscriptionMt "machine reading" "Text produced by OCR or another automatic process. It is evidence to check, not a source.")
+(activeConcept ReckonerStarterLiteralTranscriptionMt "uncertain reading" "A reading the copy supports only in part. Say what else the characters could be.")
+(activeConcept ReckonerStarterLiteralTranscriptionMt "illegible" "Characters that cannot be read from the available copy. Say where they are and, if possible, how many.")
+;;; Section 4. Rules
+(contextRule ReckonerStarterLiteralTranscriptionMt "Keep the source spelling, punctuation and capitalization, even when they differ from current usage.")
+(contextRule ReckonerStarterLiteralTranscriptionMt "Change only what differs between the machine reading and the source copy.")
+(contextRule ReckonerStarterLiteralTranscriptionMt "Mark every uncertain or illegible passage and say why. Never fill a gap from memory or expectation.")
+(contextRule ReckonerStarterLiteralTranscriptionMt "Keep line breaks and end-of-line hyphens when a later check could depend on them.")
+(contextRule ReckonerStarterLiteralTranscriptionMt "Put explanations in the reason for the reading, never inside the transcription itself.")
+(lensOperation ReckonerStarterLiteralTranscriptionMt "readingTextSizePx" 17)
+(lensOperation ReckonerStarterLiteralTranscriptionMt "readingLineSpacingPercent" 190)
+;;; Section 5. Disambiguation hints
+(disambiguationHint ReckonerStarterLiteralTranscriptionMt "OCR often confuses similar shapes: 1, l and I; 0 and O; rn and m; cl and d; and ligatures such as ﬁ and ﬂ.")
+(disambiguationHint ReckonerStarterLiteralTranscriptionMt "A misread digit in a date or amount changes the meaning. Check each digit against the copy.")
+(disambiguationHint ReckonerStarterLiteralTranscriptionMt "Faint or broken type can look like punctuation. Compare it with the same letter elsewhere on the page.")
+;;; Section 6. References
+(contextReference ReckonerStarterLiteralTranscriptionMt "Reckoner worked example: a notice date (synthetic)" "" "Try a worked example")

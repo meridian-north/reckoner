@@ -1,0 +1,209 @@
+{
+  "schema": "reckoner.context_fixtures.v0.1",
+  "note": "Synthetic public fixtures. Definitions are canonical Reckoner context texts; projections and header blocks are derived from them. Nothing here is a native admission, a compatibility claim or a private definition.",
+  "files": [
+    {
+      "file": "probe-quoted-header-v01.cycl",
+      "kind": "definition",
+      "id": "ctx:probe:quoted-header-v01",
+      "version": 1,
+      "format": "reckoner.context.cycl.v0.1",
+      "sha256": "f3d910826230f89fea00845c84626b5fce5396769cea3ef60f7f89622f3efb97",
+      "bytes": 2268
+    },
+    {
+      "file": "probe-quoted-header-v01.projection.json",
+      "kind": "projection_json",
+      "source": "probe-quoted-header-v01.cycl",
+      "nativeHeader": "unsupported",
+      "sha256": "f0c2f7b4b50dab1aa1bfe878ef0613e0b9b4307bec185e5c81751eeba1aa65d9",
+      "bytes": 21329
+    },
+    {
+      "file": "probe-quoted-header-v01.projection.txt",
+      "kind": "projection_text",
+      "source": "probe-quoted-header-v01.cycl",
+      "nativeHeader": "unsupported",
+      "sha256": "a6559f667803ceac2662041328e5dafb4d9ac2d68c5e63d88f97736f1c6f28bd",
+      "bytes": 3412
+    },
+    {
+      "file": "probe-quoted-metadata-v02.cycl",
+      "kind": "definition",
+      "id": "ctx:probe:quoted-metadata-v02",
+      "version": 1,
+      "format": "reckoner.context.cycl.v0.2",
+      "sha256": "369301975bf3e2c4491bc2bf391cf4d131313d04ebd1661ef2c59d694425aa23",
+      "bytes": 2257
+    },
+    {
+      "file": "probe-quoted-metadata-v02.native-header.txt",
+      "kind": "native_header",
+      "source": "probe-quoted-metadata-v02.cycl",
+      "nativeHeader": "emitted",
+      "sha256": "d4ca78af61b013183ce07138c0fc63fecdade733c4015595dac9e31cf95d1f4f",
+      "bytes": 120
+    },
+    {
+      "file": "probe-quoted-metadata-v02.projection.json",
+      "kind": "projection_json",
+      "source": "probe-quoted-metadata-v02.cycl",
+      "nativeHeader": "emitted",
+      "sha256": "d3afbbd668d0008b0a8b5ae0e4aadbc86cb0b7a9a610c5070eebfa441f8f6da6",
+      "bytes": 21453
+    },
+    {
+      "file": "probe-quoted-metadata-v02.projection.txt",
+      "kind": "projection_text",
+      "source": "probe-quoted-metadata-v02.cycl",
+      "nativeHeader": "emitted",
+      "sha256": "5b65ed7c0f346260bf999cad4937a956b8ffbb72f9659b479d9aedecd4422d4b",
+      "bytes": 3379
+    },
+    {
+      "file": "probe-quoted-metadata-v03.cycl",
+      "kind": "definition",
+      "id": "ctx:probe:quoted-metadata-v03",
+      "version": 1,
+      "format": "reckoner.context.cycl.v0.3",
+      "sha256": "9234accf1963693ef8e7e2eae5e453addda4ec66280943d947b817fe36cde491",
+      "bytes": 2272
+    },
+    {
+      "file": "probe-quoted-metadata-v03.native-header.txt",
+      "kind": "native_header",
+      "source": "probe-quoted-metadata-v03.cycl",
+      "nativeHeader": "emitted",
+      "sha256": "d4ca78af61b013183ce07138c0fc63fecdade733c4015595dac9e31cf95d1f4f",
+      "bytes": 120
+    },
+    {
+      "file": "probe-quoted-metadata-v03.projection.json",
+      "kind": "projection_json",
+      "source": "probe-quoted-metadata-v03.cycl",
+      "nativeHeader": "emitted",
+      "sha256": "d8e4fc22213c2908b084be007e3552ef2fe99b55274d00ea3b8a1529ef7da620",
+      "bytes": 21470
+    },
+    {
+      "file": "probe-quoted-metadata-v03.projection.txt",
+      "kind": "projection_text",
+      "source": "probe-quoted-metadata-v03.cycl",
+      "nativeHeader": "emitted",
+      "sha256": "72c41d17404743628ee75d60abc0d5bd3535960c76a34f190a1558b14264979b",
+      "bytes": 3379
+    },
+    {
+      "file": "starter-accountable-review.v1.cycl",
+      "kind": "definition",
+      "id": "ctx:starter:accountable-review",
+      "version": 1,
+      "format": "reckoner.context.cycl.v0.1",
+      "sha256": "ad19958955903455679b59ecff2e88fb9429b89d0a30d4559a917fa10f516b28",
+      "bytes": 3845
+    },
+    {
+      "file": "starter-accountable-review.v2.cycl",
+      "kind": "definition",
+      "id": "ctx:starter:accountable-review",
+      "version": 2,
+      "format": "reckoner.context.cycl.v0.3",
+      "sha256": "2851e9dd5581f8d5838d4107659b82ca8f5d7168bcd8f04e49cdf8de11429f51",
+      "bytes": 4437
+    },
+    {
+      "file": "starter-estimate-assumptions.v1.cycl",
+      "kind": "definition",
+      "id": "ctx:starter:estimate-assumptions",
+      "version": 1,
+      "format": "reckoner.context.cycl.v0.1",
+      "sha256": "6e308813cd178af74c31527365f705a36d59ea64975931ec9e8aaccad1ff8b5b",
+      "bytes": 4126
+    },
+    {
+      "file": "starter-estimate-assumptions.v2.cycl",
+      "kind": "definition",
+      "id": "ctx:starter:estimate-assumptions",
+      "version": 2,
+      "format": "reckoner.context.cycl.v0.3",
+      "sha256": "6e796f9849550dfc0b83ea811eda7df373e66029007c0f21ebf0323d524720b4",
+      "bytes": 4794
+    },
+    {
+      "file": "starter-estimate-assumptions.v2.native-header.txt",
+      "kind": "native_header",
+      "source": "starter-estimate-assumptions.v2.cycl",
+      "nativeHeader": "emitted",
+      "sha256": "e1cc86c4fb84be6fa6a4d3f5d08ad6ae0cc056f947f27a0f55988e00bd772acd",
+      "bytes": 126
+    },
+    {
+      "file": "starter-estimate-assumptions.v2.projection.json",
+      "kind": "projection_json",
+      "source": "starter-estimate-assumptions.v2.cycl",
+      "nativeHeader": "emitted",
+      "sha256": "be8acb9154e0a410bf1600c63a736cd9af0a74f333d2aaf04faa2330045cea54",
+      "bytes": 33051
+    },
+    {
+      "file": "starter-estimate-assumptions.v2.projection.txt",
+      "kind": "projection_text",
+      "source": "starter-estimate-assumptions.v2.cycl",
+      "nativeHeader": "emitted",
+      "sha256": "af8bd3a9c24251bddd0c884dec1c64528d7dc0e8b519149c565ef719c49dd5f1",
+      "bytes": 5385
+    },
+    {
+      "file": "starter-image-interpretation.v1.cycl",
+      "kind": "definition",
+      "id": "ctx:starter:image-interpretation",
+      "version": 1,
+      "format": "reckoner.context.cycl.v0.1",
+      "sha256": "7903c95108e7b5590955ef0db75f73630b0bdb8dce52323ea9ef335856acbd1b",
+      "bytes": 4226
+    },
+    {
+      "file": "starter-image-interpretation.v2.cycl",
+      "kind": "definition",
+      "id": "ctx:starter:image-interpretation",
+      "version": 2,
+      "format": "reckoner.context.cycl.v0.3",
+      "sha256": "2665400b3908e8f136a84bed311ff3578d9354677a2e8014791f0e72ffa2f6ed",
+      "bytes": 4824
+    },
+    {
+      "file": "starter-literal-transcription.v1.cycl",
+      "kind": "definition",
+      "id": "ctx:starter:literal-transcription",
+      "version": 1,
+      "format": "reckoner.context.cycl.v0.1",
+      "sha256": "c0ef0ecc03b35a133e8f76b3dfbf4f3f40cbe37847677c27b63b0d9b7b3d35e0",
+      "bytes": 4556
+    },
+    {
+      "file": "starter-literal-transcription.v1.projection.json",
+      "kind": "projection_json",
+      "source": "starter-literal-transcription.v1.cycl",
+      "nativeHeader": "not_emitted",
+      "sha256": "c13f664f3c04de32ddc0bc78dc911e5d948cfbf1562bc670fdb55da7ca171e92",
+      "bytes": 31643
+    },
+    {
+      "file": "starter-literal-transcription.v1.projection.txt",
+      "kind": "projection_text",
+      "source": "starter-literal-transcription.v1.cycl",
+      "nativeHeader": "not_emitted",
+      "sha256": "83ee7f803559115552009b0f090d1efadab14f2ac9edfd9dbeeebfa6f7c3be51",
+      "bytes": 5325
+    },
+    {
+      "file": "starter-literal-transcription.v2.cycl",
+      "kind": "definition",
+      "id": "ctx:starter:literal-transcription",
+      "version": 2,
+      "format": "reckoner.context.cycl.v0.3",
+      "sha256": "1f922aed03a439166eb08dedbddafddfcd6fd694f1e1ebe43385d00849d7fd56",
+      "bytes": 5157
+    }
+  ]
+}

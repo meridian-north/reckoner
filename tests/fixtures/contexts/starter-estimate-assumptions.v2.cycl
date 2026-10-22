@@ -1,0 +1,41 @@
+;;; Reckoner public context definition
+;;; Readable CycL subset: declarative assertions only. Nothing in this file is executed.
+;;; Section 1. Header: schema, provenance and filing facets
+(contextFormat ReckonerStarterEstimateAssumptionsMt "reckoner.context.cycl.v0.3")
+(contextAuthor ReckonerStarterEstimateAssumptionsMt "Reckoner starter examples")
+(contextCreatedAt ReckonerStarterEstimateAssumptionsMt "2026-10-15T12:00:00.000Z")
+(contextReleaseLabel ReckonerStarterEstimateAssumptionsMt "starter_example")
+(provenanceBasis ReckonerStarterEstimateAssumptionsMt "revision")
+(provenanceStatement ReckonerStarterEstimateAssumptionsMt "Newly written in October 2026 as a starter example for the public Reckoner form, without access to private Garrison Node definitions and without OpenCyc content. Not endorsed by Internet Archive and not promoted for Garrison Node production use. Adapt it, derive a narrower context from it, or write your own.")
+(revisionOf ReckonerStarterEstimateAssumptionsMt "ctx:starter:estimate-assumptions" 1 "6e308813cd178af74c31527365f705a36d59ea64975931ec9e8aaccad1ff8b5b")
+(revisionReason ReckonerStarterEstimateAssumptionsMt "Rewritten in format reckoner.context.cycl.v0.3, the native-aligned public format: native six-section order, one assertion per line, and filing and discovery facets in the section 1 header. The meaning, facets, concepts, rules, view settings, hints and references are unchanged from version 1, which keeps its own bytes, hash and reviews. Its broader context is version 2 of Accountable review, pinned by hash.")
+(contextFacet ReckonerStarterEstimateAssumptionsMt "work" "review")
+(contextFacet ReckonerStarterEstimateAssumptionsMt "media" "pdf")
+(contextFacet ReckonerStarterEstimateAssumptionsMt "domain" "environmental reports")
+(contextFacet ReckonerStarterEstimateAssumptionsMt "domain" "technical reports")
+;;; Section 2. Identity and inheritance, with 5W1H emphasis
+(isa ReckonerStarterEstimateAssumptionsMt Microtheory)
+(contextId ReckonerStarterEstimateAssumptionsMt "ctx:starter:estimate-assumptions")
+(contextVersion ReckonerStarterEstimateAssumptionsMt 2)
+(contextName ReckonerStarterEstimateAssumptionsMt "Estimates and their assumptions")
+(comment ReckonerStarterEstimateAssumptionsMt "A narrower form of accountable review for reports that contain estimates. An estimate is read together with the assumptions that produce it, such as capacity, production level, period and method. Readings and reviews keep the qualifying words that mark a figure as estimated, theoretical or a maximum, and keep different scenarios apart. A cited source that has not been inspected is marked as not inspected.")
+(genlMt ReckonerStarterEstimateAssumptionsMt ReckonerStarterAccountableReviewMt)
+(parentPin ReckonerStarterEstimateAssumptionsMt ReckonerStarterAccountableReviewMt "ctx:starter:accountable-review" 2 "2851e9dd5581f8d5838d4107659b82ca8f5d7168bcd8f04e49cdf8de11429f51")
+(fiveWOneHEmphasis ReckonerStarterEstimateAssumptionsMt "what")
+(fiveWOneHEmphasis ReckonerStarterEstimateAssumptionsMt "why")
+(fiveWOneHEmphasis ReckonerStarterEstimateAssumptionsMt "how")
+;;; Section 3. Active concepts
+(activeConcept ReckonerStarterEstimateAssumptionsMt "estimate" "A figure calculated from stated assumptions rather than measured directly.")
+(activeConcept ReckonerStarterEstimateAssumptionsMt "qualifying words" "Words such as maximum, theoretical, approximately or estimated that limit what a figure claims.")
+(activeConcept ReckonerStarterEstimateAssumptionsMt "scenario" "One set of assumptions that produces one estimate. Different scenarios can give different figures.")
+(activeConcept ReckonerStarterEstimateAssumptionsMt "not independently inspected" "A cited source known only through the report that cites it.")
+;;; Section 4. Rules
+(contextRule ReckonerStarterEstimateAssumptionsMt "Quote qualifying words together with the figure they qualify.")
+(contextRule ReckonerStarterEstimateAssumptionsMt "Record which assumptions belong to which scenario before comparing figures.")
+(contextRule ReckonerStarterEstimateAssumptionsMt "Never describe an estimate as a measurement.")
+(contextRule ReckonerStarterEstimateAssumptionsMt "Mark each cited source as inspected or not inspected.")
+;;; Section 5. Disambiguation hints
+(disambiguationHint ReckonerStarterEstimateAssumptionsMt "Footnotes often hold the assumptions. Read them before comparing figures.")
+(disambiguationHint ReckonerStarterEstimateAssumptionsMt "Units and periods, such as per day or per year, can differ between scenarios in one report.")
+;;; Section 6. Doctrine references
+(contextReference ReckonerStarterEstimateAssumptionsMt "Real-report exercise in this form: EPA-hosted Anniston expert report" "https://semspub.epa.gov/work/04/10744553.pdf" "pages 51 and 61")

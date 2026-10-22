@@ -1,0 +1,34 @@
+;;; Reckoner native-aligned projection, schema reckoner.native_projection.v0.2
+;;; A derived metadata view of one public definition. It is not a definition and cannot be imported or relabelled.
+;;; It copies no author text. Each field gives its source line, size and SHA-256 instead, except that authored domain facets the native list syntax carries exactly are written in the file_bitnet block.
+;;; Derived from ctx:probe:quoted-metadata-v03 version 1, constant ReckonerProbeQuotedMetadataV03Mt, format reckoner.context.cycl.v0.3, SHA-256 9234accf1963693ef8e7e2eae5e453addda4ec66280943d947b817fe36cde491, 2272 bytes.
+;;; Review is public and self-declared. Native institutional and model admission are not established. Production status is not inferred.
+;;; Section 1. Header comment, with schema and provenance or filing metadata
+;; schema: garrison/file_bitnet/v1
+;; file_bitnet:
+;;   domain: [public research, source comparison]
+;; end_file_bitnet
+;;; line 4 contextFormat = reckoner.context.cycl.v0.3
+;;; line 5 contextAuthor = author text of 24 bytes, SHA-256 d33556f5ba7c87c7dd12d1abcd86521e60e5dab60ba10ea4f93760cf42556d13
+;;; line 6 contextCreatedAt = 2026-10-15T13:00:00.000Z
+;;; line 7 contextReleaseLabel = personal
+;;; line 8 provenanceBasis = newly_authored
+;;; line 9 provenanceStatement = author text of 234 bytes, SHA-256 9445af902f8da785cadf69eaee95828747e18091e5d66c6ad2baaeab42ce04d4
+;;; line 10 contextFacet = domain | author text of 15 bytes, SHA-256 edb8116f579d41deafce2e62ddfca0377de27947db509af38553de11f9737d8b
+;;; line 11 contextFacet = domain | author text of 17 bytes, SHA-256 145a81821813913427c2ad96eff50e3787bec203fc1ff29ad1aaa96bb479809f
+;;; Section 2. Identity and inheritance, with 5W1H emphasis
+;;; line 13 isa = Microtheory
+;;; line 14 contextId = ctx:probe:quoted-metadata-v03
+;;; line 15 contextVersion = 1
+;;; line 16 contextName = author text of 34 bytes, SHA-256 2ed241874b79e59a55debd20affcf0c45c843e264961cadf6e069602e9a79852
+;;; line 17 comment = author text of 102 bytes, SHA-256 f9fc31f71939e1be04d52bc296bc3be75b723fcdd71c2e7655f3b530196e89d5
+;;; line 18 fiveWOneHEmphasis = what
+;;; Section 3. Active concepts
+;;; line 20 activeConcept = author text of 14 bytes, SHA-256 5d684651caaf0a43415d3972d82c0e822210c1d1f4291c01fcbdfee1acf0f518 | author text of 106 bytes, SHA-256 2656d04836f7131fd8bb7df98a4f65a97364386447ea858845f46109dab87f92
+;;; Section 4. Rules
+;;; line 22 contextRule = author text of 120 bytes, SHA-256 87505c2ff5e2ae513e7613f6dfe342684a521b8a435cdd11c7ab7c2355074385
+;;; Section 5. Disambiguation hints
+;;; line 24 disambiguationHint = author text of 95 bytes, SHA-256 b7bf6f9852c56b1398261a65bebcf62c676d8c85dcaf7d977741d39a93906a0a
+;;; Section 6. Doctrine references
+;;; line 26 contextReference = author text of 32 bytes, SHA-256 ab68d03d011726c3c56b35f8d99c5bb521e61bdd6bfab42052459484a1847fa4 | author text of 0 bytes, SHA-256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 | author text of 28 bytes, SHA-256 89b653ffed5e587bb99f74802b79e52cd2e5f9aef79f768bffc8f4e6b4d5c3ac
+;;; The public form does not provide native header keys other than domain; native BitNet predicates and scoring; native institutional admission; native model admission or promotion; production status or authority; other native metadata formats; author text; native fields or rules beyond the declared public fields.

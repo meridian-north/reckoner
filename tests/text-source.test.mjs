@@ -1,0 +1,5 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {decodeTextSource,isTextSource} from '../dist/text-source.js';
+const bytes=s=>new TextEncoder().encode(s).buffer;
+test('HTML and XML stay literal strings including scripts and external entities',()=>{for(const [name,text] of [['source.html','<script>fetch("https://example.invalid")</script><p>Claim</p>'],['source.xml','<!DOCTYPE x SYSTEM "https://example.invalid"><x>&entity;</x>']])assert.equal(decodeTextSource({name,size:bytes(text).byteLength},bytes(text)),text);});
+test('only explicit text extensions qualify and UTF-8 must be valid',()=>{assert.equal(isTextSource({name:'source.html.exe'}),false);assert.equal(isTextSource({name:'SOURCE.XML'}),true);assert.throws(()=>decodeTextSource({name:'x.txt',size:2},new Uint8Array([0xc0,0xff]).buffer),/not valid UTF-8/);});
+test('empty, binary controls and oversized text refuse without pretending to parse',()=>{for(const t of ['','a\u0000b'])assert.throws(()=>decodeTextSource({name:'x.txt',size:bytes(t).byteLength},bytes(t)),/empty or contains/);assert.throws(()=>decodeTextSource({name:'x.txt',size:200001},bytes('text')),/under 200 KB/);});

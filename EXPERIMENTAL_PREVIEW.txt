@@ -1,0 +1,26 @@
+Reckoner experimental Alpha - October 21, 2026
+
+Record an interpretation. Let others check it.
+
+Scope
+Compare a retained source with supplied text or a claim. Save a proposed reading, evidence, uncertainty, credit and a self-declared AI assistance note. Preserve separate reviews and history. This is an invitation to test, comment and contribute; no institutional endorsement is claimed. Fourteen practice exercises are synthetic, not an accuracy benchmark.
+
+Start
+Serve dist/ with a local static server and open index.html. Choose Examples to try bundled exercises, or More then Open a review pack for MODULE.json and an extracted source folder. The stable operator starting point is http://127.0.0.1:53022/index.html; that address is local, not a public link.
+
+Save and reopen
+Save reading stores a version on this browser origin. Save to file downloads the complete JSON history; check Downloads for delivery. Open saved review reopens it. Keep original source files and hOCR separately. A valid older backup may offer explicit adoption of the verified latest locally retained history. Cancel preserves the draft. Do not clear site data to bypass a trust conflict.
+
+Known limits
+The native evidence dropdown closing on pointer movement remains unconfirmed. Full native accessibility, VoiceOver speech and Windows qualification are incomplete. Some compact forms require scrolling to reach fields. Source files and images are not embedded in history backups; browser storage is not an independent backup. Identities, roles and assistance declarations are self-declared. The application does not recognize OCR, determine truth or establish source reuse rights.
+
+The older compact-layout script has been reconciled with the current digit selection and single More menu. Current checks measure actual image fit, highlight geometry, reachable inputs and save action, theme text contrast, source-byte/baseline preservation, and keyboard/emulated-touch resizing. These checks are not physical-device acceptance. Exact-candidate human save/export/reopen/replay remains pending.
+
+Bounded formats
+PNG, JPEG, WebP and PDF up to 20 MiB; literal UTF-8 TXT, HTML, HTM or XML up to 200000 bytes. Markup is not executed. PDF header checking is not a full parser or security audit. Source bytes remain separate and unchanged.
+
+Feedback
+Report the browser/OS, control label, expected result and observed result, using synthetic or permitted examples. General feedback: meridian.north@pm.me. Do not send private source documents or full personal history bundles. Use the repository Issues tab for non-sensitive software feedback.
+
+Publication
+Publishing the application does not publish your local sources or saved reviews. There is no automatic social posting or Archive.org submission. This experimental Alpha is offered for feedback and contributions; its known limits and outstanding human acceptance are stated above.

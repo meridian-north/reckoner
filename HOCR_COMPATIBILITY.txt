@@ -1,0 +1,66 @@
+hOCR interoperability — current implemented scope
+
+Reckoner reads local UTF-8 hOCR as inert data. Import does not fetch image references.
+Limits: 2 MiB per hOCR file, 100 pages, 20,000 words, 100,000 element nodes.
+Larger books need bounded page extraction; automatic Archive page-index seeking is
+not implemented. Empty OCR pages remain empty; no missing-source diagnosis follows.
+
+Open a matching local image, then Open hOCR. Image pixel dimensions must match the
+selected hOCR page. Matching dimensions do not prove correspondence: the contributor
+must check it. Select an outlined word by mouse or keyboard. The existing correction
+form records the source and hOCR hashes, page, word ID, box, original word and engine
+confidence. Add a reason and self-declared credit, then Save reading.
+Next / skip does not review a word and refuses to replace an unsaved reading.
+
+Download backup retains the creator history, reasons and review/dispute records.
+Original source and hOCR files remain separate: keep them alongside the backup.
+Reopen the backup, then the same local image and hOCR to restore a saved highlight.
+A different hash does not inherit the saved highlight. Hash matching establishes
+byte correspondence to the saved references, not verified identity or correctness.
+
+Under Source matching and limits, Export saved proposal as hOCR writes a separate
+word-level XHTML derivative of the selected saved reading. It is a PROPOSAL, not
+host acceptance. Other proposals and disputes remain in the history backup; they
+are not silently combined into the derivative. Export requires well-formed XHTML,
+matching source/hOCR references and no unsaved reading changes.
+
+The derivative retains page/line structure, word boxes and original engine word
+confidence. It normalizes character-based words to word-level text, preserving
+significant spaces with xml:space. Character boxes and inline word formatting are
+removed throughout that derivative to avoid mixed word/character representations.
+Engine confidence is not a score for the human correction. Active references and
+unsupported XHTML elements are removed or refused. Original bytes are never edited.
+The history backup remains the attribution and review artifact; hOCR alone is not
+an equivalent audit record.
+
+Current reproducible checks include scripts/hocr-export-check.mjs with realistic XML declaration, DOCTYPE, XHTML namespace and OCR metadata; scripts/hocr-form-walkthrough.mjs with save, credited contribution JSON, backup/reopen, mentor needs-review and full guidance replay; and scripts/local-hocr-walkthrough.mjs for an already-permitted local image and matching hOCR. The local real-file check was run on a Spearin court-page image with Tesseract 5.5.3 output: 354 words, unchanged reading, valid XML derivative and restored highlight, with no source-host requests. Supply your own matching permitted image/hOCR to repeat that test. Its record is an explicitly AI-operated software test, not human arbitration.
+
+Historical comparison, not current-package acceptance: an earlier pinned archive-hocr-tools page yielded 594 matching words and a deliberate TEST_PROPOSAL export at upstream commit e1fc351ac15b3f599b99df2b98d5420bd033b289. That local excerpt dropped the original document header and therefore did not test realistic XML declarations or metadata. The upstream fixture and external parser are not redistributed in this package, so that earlier result is not independently reproducible from this ZIP alone. Do not use it to imply full Archive compatibility. Current XML-header coverage comes from the explicit export regression above.
+
+All evidence remains scoped. No full-book, pageindex, rescaled-page, universal tool/version compatibility, Internet Archive adoption or endorsement is established.
+
+Reproduce browser checks with Playwright and Chromium available:
+  node scripts/hocr-parser-check.mjs
+  node scripts/hocr-form-walkthrough.mjs
+Optional PLAYWRIGHT_MODULE and CHROMIUM_PATH select installed local dependencies.
+
+Additional current commands:
+  node scripts/hocr-export-check.mjs
+  node scripts/local-hocr-walkthrough.mjs LOCAL_IMAGE LOCAL_HOCR OUTPUT_DIRECTORY
+Readable contribution fields and hash semantics: CONTRIBUTION_JSON.txt and schemas/contribution-receipt.schema.json. Optional AI assistance is per reading and self-declared. hOCR by itself is not the credit/history sidecar.
+
+Archive tooling fixture format check
+A separately retained official archive-hocr-tools chOCR fixture from an1884
+magazine (Tesseract5.3.0-1-gd3a4) was pinned by its Git LFS SHA256. A592-word
+page excerpt retained the original XHTML header and exact page block. In an
+isolated Chromium run, unchanged text exported intact; one artificial word
+change produced valid XML with stable page dimensions/word boxes/confidence.
+The pinned archive-hocr-tools1d23de4 reader independently read exactly that
+change. No image was supplied: this qualifies a format-only excerpt, not visual
+correspondence, full-book navigation, current service ingestion or endorsement.
+The source fixture, excerpt and artificial derivative are NOT in this bundle.
+Repeat on an already-permitted bounded local file:
+  node scripts/local-hocr-format-check.mjs LOCAL_HOCR PRIVATE_OUTPUT_DIRECTORY
+The script reads at most2MiB plus one refusal byte, blocks non-origin requests
+and writes a deliberately artificial derivative privately. No source file is
+changed. Do not publish that derivative as a factual correction.

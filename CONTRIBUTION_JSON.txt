@@ -1,0 +1,69 @@
+READABLE CONTRIBUTION JSON — PRIVATE CANDIDATE
+
+“Download contribution JSON” exports the existing garrison.cairn.receipt.v0.1 schema as readable JSON. It includes saved revisions, each revision’s source identity and context, original/proposed reading, contributor, reason and uncertainty; separately recorded modelRuns, reviews, disputes and resolutions are included when present. hOCR provenance is structured in revisions[].context.hocr. No source image or original hOCR bytes are embedded: retain those separately.
+
+The integrity.bodySha256 covers the canonical receipt body. This detects changes relative to a retained digest; it authenticates neither identity, correctness, permission nor completeness. Exported timestamps are device assertions. There is no public-chain operation.
+
+This file can be opened through Open saved work on a fresh device. Reopening a standalone receipt does not restore creator-history checkpoints. A device already retaining creator history for this record requires its history backup instead, to prevent bypassing retained continuity checks. Keep Download backup for complete creator-history transport and recovery.
+
+This is a readable representation of the existing review record, not an additional correction schema. It does not yet unify the experimental public contribution WAL.csv workbench with creator history. CSV/WAL integration and an externally reviewed minimal maintainer-facing contract remain open.
+
+Older receipts may carry hOCR pins in context.method; the reader retains that fallback. New word selections store pins in context.hocr, allowing context.method to remain editable explanation text.
+
+PRIVATE WAL BRIDGE
+The local experimental WAL workbench accepts this exact readable receipt through its packet-file input. It retains each receipt snapshot by its byte hash, the preceding WAL bytes, and the row predecessor/genesis chain. The active reading contributor and recorded reviewer/mentor labels and event IDs are carried into WAL attribution and checked against the referenced receipt. The save operator remains a separate creator field. Model records remain in the exact receipt; their presence alone is not interpreted as proof that they assisted a particular revision. Assistance stays UNKNOWN unless expressly declared by a supported artifact. No identity authentication is implied.
+
+A two-version integration test verifies exact first and second receipt bytes, retained prior WAL bytes, predecessor continuity, separate mentor attribution, and checkpoint-checked reopening. This bridge still requires explicit file selection in the workbench; automatic one-step integration with the primary save action is not implemented.
+
+VERSIONED STRUCTURAL SCHEMA
+schemas/contribution-receipt.schema.json describes the JSON currently exported by Download contribution JSON. The wire schema identifier remains garrison.cairn.receipt.v0.1. Its schema-document identifier is a URN, not a claim that a public schema URL is hosted. The schema was checked with a Draft 2020-12 validator against an actual exported real court-page software-test contribution. It intentionally permits existing optional extensions. It is a structural description, not a substitute for verifyReceipt or host agreement.
+
+FIELD MAP
+Record identity: id; createdAt and exportedAt are device-supplied times.
+Current selection: activeRevisionId.
+Saved reading: revisions[].id, number, parentId, observedAt.
+Human judgment: revisions[].reading.original, proposed, reason, uncertainty, contributor.
+Exact source identity: revisions[].sourceImage.sha256 and revisions[].context.hocr.sourceSha256 when hOCR is used. Context also carries available sourceUrl, sourceFile, locator and source metadata.
+OCR identity and region: revisions[].context.hocr.hocrSha256, hocrFile, hocrBytes, pageId, pageIndex (zero based), wordId, originalWord, bbox [left, top, right, bottom], ocrConfidence. Confidence remains engine output.
+Human explanation of checks: revisions[].context.method. It is separate from the structured hOCR pin.
+Review: reviews[].id, revisionId, reviewer, role, decision, reason, recordedAt. A decision of accepted is this self-declared reviewer’s decision, not host acceptance.
+AI records: modelRuns. Their presence alone does not prove assistance to every revision; do not silently infer revision-specific assistance. Optional revisions[].reading.assistance records the contributor’s self-declared model/assistance note for that exact reading. Blank or absent means not declared. It is separate from the contributor and reviewers.
+Additional 5W1H: context and fiveWOneH field mapping. Advanced optional collections retain their separate semantics.
+
+EXACT EXISTING RECEIPT HASH RULE
+Remove the top-level integrity property entirely. Canonicalize the remaining JSON body using core.js canonical(): recursively sort object keys using JavaScript string-key sorting; preserve array order; serialize primitive values using JSON.stringify; emit compact JSON without a trailing newline. Encode UTF-8, compute SHA-256, and compare lowercase hex with integrity.bodySha256. Do not remove a hypothetical recordHash field: this existing format has no such field. The canonicalization label and algorithm are carried in integrity.
+
+This digest identifies the canonical body, not the exact pretty-printed transport bytes. Hashing an exported file’s raw bytes is a separate checkpoint that also detects whitespace changes. Never confuse those two digests.
+
+REVISION LINKS AND CHECKPOINTS
+parentId names an earlier reading within the same receipt. It is not a per-revision content hash. Creator-history transport separately retains snapshots and genesis/tip checkpoints; the optional experimental WAL separately references exact receipt bytes and links its rows. A standalone readable receipt does not itself supply independently witnessed completeness or freshness. Retain previous exports/checkpoints outside the current file. Per-revision prior-ID-plus-content-hash is a proposed enhancement, not a field currently emitted.
+
+SEMANTIC CHECKS
+The application additionally verifies the body digest, revision ancestry, review targets, coordinate ordering, supported contexts and bounded imports. Reopening matching image/hOCR bytes verifies source correspondence before restoring a region or exporting a derivative. A JSON Schema validator cannot establish those cryptographic or cross-record relationships alone.
+
+ATTACHMENT CONVENTION (PROPOSED)
+contribution-<record-id>.json is the app download filename. Keep source image and hOCR separately, with their recorded hashes. This is a proposed portable review attachment, not an Archive derivative naming convention, automatic upload, replacement OCR or institutional acceptance contract.
+
+STANDALONE READ-ONLY VALIDATOR
+With Node.js, a maintainer can run:
+  node scripts/verify-contribution.mjs contribution.json
+Optionally compare an independently retained raw file-byte hash:
+  node scripts/verify-contribution.mjs contribution.json --expected-sha256 HEX
+
+The command reuses core.js verifyReceipt; it does not create a competing schema
+or fetch anything. It reads at most 2 MiB plus one overflow-detection byte,
+refuses oversized/non-regular/malformed/invalid-UTF-8 input and symbolic links, and never changes
+the file. Success exits 0; refusal exits nonzero. JSON output distinguishes the
+raw file digest from the receipt canonical-body digest and reports counts, not
+source passages. A supplied file hash is only as independent/trusted as its
+retention. Matching it does not prove no newer copy exists. Source bytes and
+hOCR correspondence are NOT checked, and identity, rights and correctness
+remain unverified. This is a minimal integration adapter, not an editor plugin
+or a full history-backup/WAL verifier. Keep those artifacts for their purposes.
+
+CONTRIBUTION EVIDENCE AND REPUTATION
+The receipt preserves attributed judgment, not verified identity or reputation.
+Repeated independent review can provide evidence for a future reputation policy.
+Before/after file hashes require retained exact versions and independent reference
+checkpoints. Optional external anchoring, signing and reputation scoring are
+proposed, not implemented. See PUBLIC_CONTRIBUTION_WAL.txt for the boundary.

@@ -1,0 +1,4 @@
+;; schema: garrison/file_bitnet/v1
+;; file_bitnet:
+;;   domain: [environmental reports, technical reports]
+;; end_file_bitnet

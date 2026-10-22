@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: General help and sensitive-report intake
+    url: mailto:meridian.north@pm.me
+    about: Ask for help without sending confidential records or credentials.

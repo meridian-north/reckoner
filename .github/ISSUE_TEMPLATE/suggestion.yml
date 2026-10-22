@@ -1,0 +1,10 @@
+name: Workflow suggestion
+description: Suggest an improvement or report an instruction problem
+body:
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested improvement
+      description: What were you trying to do, what happened, and what would help?
+    validations:
+      required: true

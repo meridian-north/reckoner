@@ -1,0 +1,41 @@
+;;; Reckoner public context definition
+;;; Readable CycL subset: declarative assertions only. Nothing in this file is executed.
+;;; Section 1. Header: schema, provenance and filing facets
+(contextFormat ReckonerStarterAccountableReviewMt "reckoner.context.cycl.v0.3")
+(contextAuthor ReckonerStarterAccountableReviewMt "Reckoner starter examples")
+(contextCreatedAt ReckonerStarterAccountableReviewMt "2026-10-15T12:00:00.000Z")
+(contextReleaseLabel ReckonerStarterAccountableReviewMt "starter_example")
+(provenanceBasis ReckonerStarterAccountableReviewMt "revision")
+(provenanceStatement ReckonerStarterAccountableReviewMt "Newly written in October 2026 as a starter example for the public Reckoner form, without access to private Garrison Node definitions and without OpenCyc content. Not endorsed by Internet Archive and not promoted for Garrison Node production use. Adapt it, derive a narrower context from it, or write your own.")
+(revisionOf ReckonerStarterAccountableReviewMt "ctx:starter:accountable-review" 1 "ad19958955903455679b59ecff2e88fb9429b89d0a30d4559a917fa10f516b28")
+(revisionReason ReckonerStarterAccountableReviewMt "Rewritten in format reckoner.context.cycl.v0.3, the native-aligned public format: native six-section order, one assertion per line, and filing and discovery facets in the section 1 header. The meaning, facets, concepts, rules, view settings, hints and references are unchanged from version 1, which keeps its own bytes, hash and reviews.")
+(contextFacet ReckonerStarterAccountableReviewMt "work" "mentoring")
+(contextFacet ReckonerStarterAccountableReviewMt "work" "review")
+(contextFacet ReckonerStarterAccountableReviewMt "audience" "mentors")
+(contextFacet ReckonerStarterAccountableReviewMt "audience" "readers")
+;;; Section 2. Identity and inheritance, with 5W1H emphasis
+(isa ReckonerStarterAccountableReviewMt Microtheory)
+(contextId ReckonerStarterAccountableReviewMt "ctx:starter:accountable-review")
+(contextVersion ReckonerStarterAccountableReviewMt 2)
+(contextName ReckonerStarterAccountableReviewMt "Accountable review")
+(comment ReckonerStarterAccountableReviewMt "Review a saved reading so that another person can repeat your check and see why you reached your decision. A review names the exact reading and source location examined, what was checked, what was not checked, and what remains uncertain. Agreement and disagreement are both kept. A review records a decision by a self-declared person; it does not by itself make a reading true or institutionally approved.")
+(fiveWOneHEmphasis ReckonerStarterAccountableReviewMt "who")
+(fiveWOneHEmphasis ReckonerStarterAccountableReviewMt "what")
+(fiveWOneHEmphasis ReckonerStarterAccountableReviewMt "where")
+(fiveWOneHEmphasis ReckonerStarterAccountableReviewMt "how")
+;;; Section 3. Active concepts
+(activeConcept ReckonerStarterAccountableReviewMt "repeatable check" "Steps another person can follow with the same source to reach, or test, the same decision.")
+(activeConcept ReckonerStarterAccountableReviewMt "evidence checked" "The source passages, copies and tools actually examined.")
+(activeConcept ReckonerStarterAccountableReviewMt "not checked" "Relevant material that was not examined. Stating it is part of the review.")
+(activeConcept ReckonerStarterAccountableReviewMt "disagreement" "A recorded difference between reviews. Keep it visible rather than settling it silently.")
+;;; Section 4. Rules
+(contextRule ReckonerStarterAccountableReviewMt "Name the saved reading and the source location you examined.")
+(contextRule ReckonerStarterAccountableReviewMt "Describe each check precisely enough for another person to repeat it.")
+(contextRule ReckonerStarterAccountableReviewMt "List relevant material you did not inspect.")
+(contextRule ReckonerStarterAccountableReviewMt "Keep quoted source wording separate from your explanation.")
+(contextRule ReckonerStarterAccountableReviewMt "Do not treat a majority, a role, or your own earlier review as proof.")
+;;; Section 5. Disambiguation hints
+(disambiguationHint ReckonerStarterAccountableReviewMt "\"Accepted\" means the reading matches the evidence you checked, not that every question is settled.")
+(disambiguationHint ReckonerStarterAccountableReviewMt "A mentor explains how to make the check, not only what the answer is.")
+;;; Section 6. Doctrine references
+(contextReference ReckonerStarterAccountableReviewMt "Reckoner contributing guide" "" "CONTRIBUTING.md")

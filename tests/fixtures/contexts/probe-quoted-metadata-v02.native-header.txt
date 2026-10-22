@@ -1,0 +1,4 @@
+;; schema: garrison/file_bitnet/v1
+;; file_bitnet:
+;;   domain: [public research, source comparison]
+;; end_file_bitnet

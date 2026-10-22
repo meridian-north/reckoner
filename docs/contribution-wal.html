@@ -1,0 +1,32 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Private experimental WAL workbench</title><style>body{font:17px/1.5 system-ui,sans-serif;max-width:950px;margin:auto;padding:1.5rem;color:#17232d;background:#faf9f5}h1{font-size:1.8rem}fieldset{margin:1rem 0;border:1px solid #82949f;border-radius:8px;padding:1rem}label{display:block;margin:.65rem 0}input:not([type=checkbox]),textarea{display:block;box-sizing:border-box;width:100%;font:inherit;padding:.5rem}button{font:inherit;padding:.6rem;margin:.3rem .3rem .3rem 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#eef1f1;padding:1rem;border-radius:6px}small{display:block}input[type=checkbox]{width:1.1rem;height:1.1rem}button:disabled{opacity:.5}</style></head><body>
+<main><p><a href="index.html">Return to review</a> · <a href="reported-issues.html">Reported problems</a></p><h1>Private experimental WAL workbench</h1>
+<p>Create or continue a local contribution history from a full review receipt, file-problem report or correction JSON packet. This experimental format is separate from registered Garrison Node WALs.</p>
+<p><strong>Identity: UNAUTHENTICATED · Rights: NOT_VERIFIED · Admission: NOT_PERFORMED.</strong> Files stay in this page's memory until you download them. No upload, sharing, source fetch, model call or browser storage occurs. Close or reload the page to clear it.</p>
+<p>Keep personal material private. This tool cannot detect PII or prove permission. It preserves the selected packet bytes; source documents/images are not included. AI/example attribution is carried as declared in the packet; unknown attribution remains UNKNOWN.</p>
+<label><input id="wal-local-only" type="checkbox"> I choose local-only inspection and download. I am not asking this page to share these files.</label>
+<fieldset><legend>Reopen an exact archive</legend>
+<label>Private WAL bundle JSON (maximum 8 MiB)<input id="wal-bundle-file" type="file" accept="application/json,.json"></label>
+<p>For a trusted comparison, enter checkpoints retained independently of this bundle. Leave both blank for untrusted self-consistency inspection. A bundle's own displayed pins do not establish independence.</p>
+<label>Independent genesis SHA-256<input id="wal-genesis" maxlength="64" autocomplete="off" spellcheck="false"></label>
+<label>Independent current tip SHA-256<input id="wal-tip" maxlength="64" autocomplete="off" spellcheck="false"></label>
+<button id="wal-reopen" type="button">Inspect selected archive</button>
+</fieldset>
+<fieldset><legend>Save a complete contribution version</legend>
+<label>Supported full JSON packet (maximum 2 MiB)<input id="wal-packet-file" type="file" accept="application/json,.json"></label>
+<label>Saving creator's declared label<input id="wal-creator" maxlength="200" autocomplete="off"></label>
+<label>History record ID (stays fixed after opening)<input id="wal-record" maxlength="200" autocomplete="off"></label>
+<label>Unique save ID<input id="wal-event" maxlength="200" autocomplete="off"></label>
+<label>Purpose of this save<textarea id="wal-purpose" maxlength="1000" rows="2"></textarea></label>
+<label>Preparation/check method actually used<textarea id="wal-method" maxlength="1000" rows="2"></textarea></label>
+<label><input id="wal-prior-kept" type="checkbox"> Before replacing the current view or appending, I downloaded/kept its exact archive separately.</label>
+<p>First save creates a private genesis. Once a history is open, another save appends to it and requires both independent checkpoints, a unique save ID and the prior-archive acknowledgment. Previous exact WALs and packet bytes remain carried.</p>
+<button id="wal-inspect" type="button">Inspect and prepare private save</button>
+</fieldset>
+<p id="wal-status" role="status" aria-live="polite">No file read. Select a packet or archive, then inspect.</p>
+<button id="wal-download" type="button" disabled>Download inspected private archive</button>
+<button id="wal-prior-download" type="button" disabled>Download kept current archive unchanged</button>
+<button id="wal-csv-download" type="button" disabled>Download exact evidence WAL CSV</button>
+<p><small>The archive includes canonical WAL bytes plus exact content-addressed JSON packets and prior WAL snapshots. Raw CSV can execute formulas in spreadsheet software. Use the inert text view below for inspection; this page never alters evidence cells to make them spreadsheet-safe.</small></p>
+<pre id="wal-summary">No inspected contribution.</pre>
+<details><summary>Inert evidence viewing projection</summary><pre id="wal-view"></pre></details>
+</main><script type="module" src="./contribution-wal-ui.js"></script></body></html>

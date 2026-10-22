@@ -1,0 +1,37 @@
+name: Public-record finding
+description: Submit one documented discrepancy for review
+title: "Finding: "
+body:
+  - type: textarea
+    id: sources
+    attributes:
+      label: Source records
+      description: Publisher, document title, Archive item URLs, exact filenames, and page or section locations for both records.
+    validations:
+      required: true
+  - type: textarea
+    id: saved_record
+    attributes:
+      label: Saved review record (optional)
+      description: Before dragging or selecting JSON, check privacy and sharing permission. GitHub uploads attachments immediately, even before you submit; public-repository uploads are publicly accessible. Prefer a minimal reviewed correction sidecar, concise description and a bounded permitted evidence crop where needed. Full review exports can include much more context; do not attach one without inspecting every included field. Do not attach original documents or full page images here. Keep sources separately; provide source URLs, exact filenames, locators and available SHA-256 pins above. Attachment is not approval or admission.
+    validations:
+      required: false
+  - type: textarea
+    id: passages
+    attributes:
+      label: Literal passages
+      description: Quote each source separately. Preserve the original wording.
+    validations:
+      required: true
+  - type: textarea
+    id: finding
+    attributes:
+      label: Observed discrepancy and checks
+      description: Explain the difference, checks performed, and uncertainties. Keep explanation distinct from quoted source text.
+    validations:
+      required: true
+  - type: input
+    id: attribution
+    attributes:
+      label: Public attribution
+      description: Name or handle you want credited. Do not enter private contact details.

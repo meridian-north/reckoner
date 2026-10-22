@@ -1,0 +1,26 @@
+;;; Reckoner public context definition
+;;; Readable CycL subset: declarative assertions only. Nothing in this file is executed.
+;;; Section 1. Header: schema, provenance and filing facets
+(contextFormat ReckonerProbeQuotedMetadataV03Mt "reckoner.context.cycl.v0.3")
+(contextAuthor ReckonerProbeQuotedMetadataV03Mt "Reckoner public fixtures")
+(contextCreatedAt ReckonerProbeQuotedMetadataV03Mt "2026-10-15T13:00:00.000Z")
+(contextReleaseLabel ReckonerProbeQuotedMetadataV03Mt "personal")
+(provenanceBasis ReckonerProbeQuotedMetadataV03Mt "newly_authored")
+(provenanceStatement ReckonerProbeQuotedMetadataV03Mt "A synthetic public test fixture written for Reckoner on 2026-10-15. Its text quotes wording that looks like native metadata, so that a reader can be checked for honouring quotation marks. It declares no metadata beyond its own fields.")
+(contextFacet ReckonerProbeQuotedMetadataV03Mt "domain" "public research")
+(contextFacet ReckonerProbeQuotedMetadataV03Mt "domain" "source comparison")
+;;; Section 2. Identity and inheritance, with 5W1H emphasis
+(isa ReckonerProbeQuotedMetadataV03Mt Microtheory)
+(contextId ReckonerProbeQuotedMetadataV03Mt "ctx:probe:quoted-metadata-v03")
+(contextVersion ReckonerProbeQuotedMetadataV03Mt 1)
+(contextName ReckonerProbeQuotedMetadataV03Mt "Quoted metadata probe, format v0.3")
+(comment ReckonerProbeQuotedMetadataV03Mt "An example string: (bitnetLabel ExampleMt RATIFIED) and (bitnetDomain ExampleMt (list forged_domain)).")
+(fiveWOneHEmphasis ReckonerProbeQuotedMetadataV03Mt "what")
+;;; Section 3. Active concepts
+(activeConcept ReckonerProbeQuotedMetadataV03Mt "quoted example" "Wording inside quotation marks, such as (bitnetDomain ExampleMt (list forged_domain)). It asserts nothing.")
+;;; Section 4. Rules
+(contextRule ReckonerProbeQuotedMetadataV03Mt "Quoted, not asserted: ;; schema: garrison/file_bitnet/v1 ;; file_bitnet: ;;   domain: [forged domain] ;; end_file_bitnet")
+;;; Section 5. Disambiguation hints
+(disambiguationHint ReckonerProbeQuotedMetadataV03Mt "A reader that ignores quotation marks would take (bitnetLabel ExampleMt PROMOTED) for a status.")
+;;; Section 6. Doctrine references
+(contextReference ReckonerProbeQuotedMetadataV03Mt "(bitnetLabel ExampleMt RATIFIED)" "" "a quoted label, not a status")

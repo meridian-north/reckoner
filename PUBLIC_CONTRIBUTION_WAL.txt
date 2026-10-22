@@ -1,0 +1,256 @@
+EXPERIMENTAL CONTRIBUTION WAL — PRIVATE PROTOTYPE, STANDALONE LOCAL WORKBENCH
+Schema: reckoner.public-contribution-wal.experimental.v2
+
+This pure local library powers a separate experimental local workbench, not registered GN WAL,
+a native writer, institutional submission, signature, public timestamp,
+blockchain anchor or recipient admission. Existing 29-column readings CSV,
+receipt JSON schemas and creator-history schemas remain unchanged. No private
+GN schema is used. Version v2 replaces the design-only draft.v1 scope with
+private_local_review by default and requires explicit audience=public_export
+to record the creator's release assertion. Neither selection proves permission
+or detects PII. A human creator needs no institutional preapproval to save;
+a recipient decides whether to adopt an exact contribution separately.
+
+PURPOSE AND CONTRIBUTOR REPUTATION
+The intended value is evidence of a contribution: what was proposed, why, by
+whom (as declared), with which assistance, and what a reviewer or mentor checked.
+A retained history can support reputation through repeated independently
+reviewed work. The current workbench does not authenticate contributors, score
+reputation, establish reviewer independence, prevent multiple identities, or
+operate a shared submission/admission service.
+
+For a before/after comparison, retain the exact prior CSV bytes and SHA-256,
+the exact later CSV bytes and SHA-256, and the linked underlying receipt
+snapshots. These full-file hashes differ from the row_digest chain. A hash
+identifies a retained state; it cannot reconstruct missing bytes or explain an
+edit by itself. Existing predecessor/genesis fields and the retained snapshots
+supply the local continuity checks; no additional field or schema is implied.
+
+An optional future adapter could submit a permitted commitment to an external
+tamper-evident ledger or blockchain. It would need to retain the destination,
+network, exact committed digest/payload, inclusion receipt and verification
+method. A trusted timestamp or verified inclusion can support existence by a
+particular point under that service's rules. It does not prove who performed
+the review, the truth of its reasoning, lawful source use, or elapsed effort.
+No external anchoring adapter is implemented here, and a locally prepared hash
+is not a successful ledger submission. No source or digest is sent automatically.
+Personal/family data and identifying fingerprints must not enter public ledgers.
+
+A future reputation policy should evaluate reproducible contributions and
+subsequent review outcomes, retaining disputes and corrected mistakes. Raw
+save counts, repeated self-reviews, token rewards or matching hashes alone are
+not quality or independent review. A stable verified signing key could establish
+key continuity under a specified protocol, not necessarily a real person.
+Signing, authenticated identity and reputation scoring remain proposed.
+
+Use “evidence of contribution” in public explanations. If “proof of work” is
+used informally for HITL or mentor effort, explicitly distinguish it from
+blockchain mining and from proof that the judgment is correct or human-authored.
+
+EXTERNAL STRANDS AND PRIVATE ENRICHMENT
+The public contribution is independent of Garrison Node internal columns. An
+external strand may be an existing versioned contribution receipt, with optional
+public WAL history and supporting strands. Neither an internal column count nor
+internal registry knowledge is required to recognize the public packet. The
+current experimental.v2 CSV happens to have 23 fields; that is a version-specific
+public layout, not a native GN compatibility requirement or internal disclosure.
+Changing this header requires an explicit new version and migration; do not
+silently rewrite already-hashed evidence. A later smaller public CSV is possible.
+
+The existing inspectPacket function recognizes supported public JSON schemas
+and verifies their documented content without first constructing any WAL row.
+This is local public-format recognition, not a deployed Garrison intake adapter.
+A private receiving adapter must preserve original external bytes and hash,
+then create its own separate internal wrapper or linked record. Internal fields
+must never be appended to the external original or round-tripped by its public
+exporter. Multiple strands should be identified by schema/version, exact digest
+and declared relationship, rather than by private positional column knowledge.
+
+Recognition, intake validation, permission to retain, admission and credit are
+separate decisions. Garrison may choose to record a contributor or mentor effort
+after its authorized checks. Recognition alone must not create reputation,
+trusted identity, acceptance or an internal write. The internal mapping stays
+private; no native adapter or private field definitions are supplied here.
+
+API
+ appendContributionWal({previousBytes=null, snapshots:Map<sha256,Uint8Array>,
+   fields, expectedGenesis=null, expectedTip=null,
+   audience='private_local_review'}) -> {bytes,snapshots,verification}
+ verifyContributionWal(bytes,snapshots,{expectedGenesis=null,expectedTip=null})
+ safeViewingProjection(bytes,snapshots,expected) -> inert JSON text + original hash
+
+All bytes and snapshots are copied; no persistence, file picker, fetch, execution,
+model call or network behavior occurs. The returned in-memory CSV is evidence,
+not spreadsheet-safe content. Render safeViewingProjection.text only as inert
+text, never HTML, formulas or active links. The JSON projection preserves values,
+has its own schema, and carries the original CSV hash; it is not another WAL.
+Do not load evidence CSV directly into a formula-evaluating spreadsheet.
+
+HEADER (exact order for experimental.v2 only; independent public contract)
+schema,record_id,sequence,operation,event_id,event_at,saved_at,source_ref,source_time,actor_attribution,reviewer_attribution,assistance_attribution,purpose,method,uncertainty,release_scope,artifact_manifest,target_selector,predecessor,genesis,row_digest,identity,admission
+
+Fields are strings. Fixed writer-owned fields: schema above, operation
+creator_save, identity self_declared_unauthenticated, admission not_performed.
+sequence is zero-based canonical decimal string. record_id identifies this
+creator-save chain, not necessarily the primary packet's internal record ID.
+event_id uniquely identifies the save; exact underlying receipt IDs belong in
+selectors. IDs are nonempty, at most 200 UTF-8 bytes. event_at is underlying
+event time or UNKNOWN (including composite snapshots); saved_at is declared
+creator save time. Timestamps use valid YYYY-MM-DDTHH:mm:ss.sssZ. No external
+time is established. purpose/method/uncertainty are operational declarations;
+source text or summaries do not belong in these source-reference cells.
+
+STRUCTURED CELLS: exact subkeys, no extras; [] means none recorded, UNKNOWN
+means not supplied, not_assessed means no assessment, not_performed means no
+recipient adoption, and literal string null is reserved for absent chain links.
+JSON null is not a wildcard accepted by the specified sub-schemas. Empty strings
+are allowed only in target_selector.pointer (the entire packet). No numerical
+JSON values; byte counts are positive canonical decimal strings.
+
+source_ref: array of {id,url,version,locator,sha256}. id/version/locator are
+ nonempty declared reference text. url is UNKNOWN or HTTPS without embedded
+ credentials; sha256 is UNKNOWN or lowercase 64-hex. References cause no fetch.
+source_time: array of {sourceId,date}; exactly one entry per source_ref.id,
+ no duplicate source IDs. date is exact source-declared date text or UNKNOWN;
+ it is not inferred or coerced to a timestamp.
+actor_attribution: {sourceActors,publisher,contributor,creator}; sourceActors
+ is an array of declared labels; remaining fields are nonempty labels or UNKNOWN.
+ Source publisher/actors, contributor and saving creator remain separate.
+reviewer_attribution: array of {label,role,artifactSha256,eventId}; role is
+ reviewer or mentor, artifact must be carried and its supported cairn receipt
+ must contain that exact reviewer label/role/event ID. This is still unsigned.
+assistance_attribution: {declaration,provider,model,runtime,persona,methodVersion};
+ declaration is none-declared, AI-assisted, AI-scripted-example or UNKNOWN;
+ remaining fields are nonempty declared values or UNKNOWN. Actual runtime/model,
+ persona and human attribution are separate; none-declared is not a verification.
+release_scope: {audience,declaration,artifactHashes}; writer creates this from
+ explicit audience selection and sorted manifest hashes. audience is
+ private_local_review or public_export. declaration is respectively not_released
+ or creator_asserts_exact_payload_release. No approval/signature is invented.
+artifact_manifest: nonempty array of
+ {role,mediaType,schema,sha256,bytes,objectName,evidenceCompleteness}.
+ role is primary or supporting; exactly one primary. mediaType application/json.
+ sha256 is raw artifact-byte SHA-256; bytes is exact byte count; objectName is
+ sha256+'.json'. Duplicate hashes within a row forbidden. completeness is
+ source_bytes_not_carried or evidence_incomplete. No complete-source claim.
+ Supported schema values: file.problem-report.v1, ocr.correction-sidecar.v1,
+ garrison.cairn.receipt.v0.1. Every listed artifact passes its existing public
+ parser, schema check, byte count and hash check. Unsupported types, binary
+ attachments, old creator-history bundles and CSV projections are rejected.
+ Primary is full receipt/report/proposal, not a fragment. A full review receipt
+ is not a full source document: source pixels/original source bytes are not
+ embedded or required by this profile. Required missing evidence must remain
+ evidence_incomplete; the validator cannot infer what a reviewer needed.
+target_selector: array of {artifactSha256,pointer}; references an included exact
+ artifact with an RFC 6901-style JSON pointer resolved using own properties only.
+ At least one selector targets the primary. Empty pointer means the full packet.
+ Select a complete revision/review object, not just a label, when claiming a
+ particular event. JSON pointer resolution is evidence location, not endorsement.
+
+5W1H
+ WHO: actor_attribution, reviewer_attribution, assistance_attribution and identity.
+ WHAT: operation/event_id plus full artifact_manifest and target_selector.
+ WHEN: source_time, event_at and saved_at separately.
+ WHERE: source_ref and exact artifact byte identity/within-artifact pointer.
+ WHY: purpose is creator's operational purpose; source-stated reason remains
+      in the preserved artifact, not an invented legal basis.
+ HOW: method, uncertainty, assistance attribution, hashes and chain linkage.
+ These are attribution/reference metadata, not literal extraction cells.
+
+CANONICAL TRANSPORT AND HASHES
+ Strict UTF-8, no BOM/NUL/unpaired surrogate, comma separator, every header/cell
+ double-quoted, internal quotes doubled, CRLF record endings including final
+ CRLF. Inner Unicode/newlines/whitespace/formula-like text remain exact; no
+ normalization, trimming, apostrophe insertion or silent sanitization.
+ Structured cells use core.canonical: compact JSON with sorted ASCII object
+ keys and preserved array order, and must equal their reserialization exactly.
+ This rejects duplicate keys, whitespace variants and alternate escape forms.
+ Each row hash = SHA256(UTF8(schema+'\n'+JSON.stringify(array of 22 decoded field
+ strings in HEADER order, excluding row_digest))). No numeric JSON ambiguity.
+ Lowercase hexadecimal SHA-256. Publish cross-runtime vectors before any
+ interoperability claim; current tests use JavaScript only.
+ First row sequence=0, predecessor='null', genesis='null'. Its digest becomes
+ genesis. Later rows carry that genesis and previous row digest; no self-hash.
+ record_id remains fixed, sequence contiguous, event IDs unique. Older rows and
+ every referenced artifact remain in the package; corrected versions append.
+ Current CSV is not included in its own manifest. Whole-CSV byte hash differs
+ from row hashes and can be retained externally as an export identity.
+
+CHECKPOINTS AND TRUST
+ Append requires caller-supplied expectedGenesis AND expectedTip matching prior
+ bytes. The library cannot prove those values were independently retained;
+ caller must retain them outside the supplied package and prevent rollback.
+ A valid package alone is UNTRUSTED_SELF_CONSISTENT_HISTORY; absent independent
+ tip is LATEST_VERSION_UNKNOWN. Matching genesis alone does not establish latest
+ version. Replacing all bytes can produce another self-consistent chain. Forks
+ and old tips are rejected relative to supplied pins, not globally discovered.
+ Hash continuity never authenticates a person, review independence, source truth,
+ permission, institutional approval, financial entitlement or adoption. Recipient
+ adoption remains separate. No automatic source acceptance follows this API.
+
+BOUNDS AND PRIVACY
+ Maximum 100 rows; WAL 2 MiB; decoded field 64 KiB; JSON row representation
+ 256 KiB; 200 snapshots; snapshot <=2 MiB; aggregate <=64 MiB; structured JSON
+ depth <=8; arrays <=200 entries; structured strings <=4000 UTF-8 bytes.
+ Existing public packet parsers impose additional limits (reports/sidecars
+ 64 KiB). Unreferenced snapshots are rejected. Source URLs are declarations,
+ not a server destination policy. Public-looking references can still be PII.
+ This library does not classify, redact, authorize disclosure or promise abuse
+ prevention. Keep personal/family material and derivatives/fingerprints out of
+ public releases and GitHub. Private-local review is not permission for a new
+ recipient/model. Unknown privacy stays held. The runtime needs actual release
+ and retention controls before any user-facing exporter or receiving service.
+
+VALIDATION
+ Focused node tests use only bounded, owned synthetic fixtures and in-memory
+ CSV; no real corpus, network or production writer. They test canonical quoting,
+ Unicode/newline/formula characters, default private scope, explicit public
+ assertion, all three public artifact parsers, checkpoints/rollback/forks,
+ sequence/order changes, row/artifact tampering, missing/wrong-size snapshots,
+ schema mismatch, unknown/deep/duplicate-key structured cells, budgets,
+ nonmutating append and separate inert projection. They do not establish
+ cross-runtime interoperability, privacy detection, source sufficiency or UI
+ enforcement. This prototype is packaged with a standalone local workbench at contribution-wal.html. Normal review saves remain unchanged. Exact private archive export/reopen and checkpointed append are browser-tested with owned fixtures. Independent interoperability review remains pending.
+
+Browser validation scope (October 19 candidate)
+The optional scripts/contribution-wal-walkthrough.mjs exercises the visible standalone workbench with an owned synthetic readable receipt. It checks separate contributor/exporter and mentor labels, declared AI assistance, exact receipt bytes, explicit unauthenticated identity/unverified rights/no admission, append, prior WAL retention, reopen and rollback refusal against a retained tip. All external requests are refused and zero attempted outbound requests are required. This is software validation; it does not establish real human authorship, source accuracy, permission, public timestamps, or a unified main-form save workflow.
+
+PUBLIC EXTERNAL STRAND V3 LIBRARY
+The separate module dist/contribution-strand.js implements
+reckoner.public-contribution-wal.experimental.v3. Its header is the v2 public
+header with bitnet_sidecars and microtheories inserted immediately after
+assistance_attribution. These are optional canonical JSON arrays; [] means no
+reference recorded. Each element is exactly {artifactSha256,pointer}, referencing
+a carried, verified receipt and a typed JSON pointer inside it. Duplicate
+references within a column are refused. bitnet_sidecars accepts only
+/modelRuns/N entries with the receipt model-suggestion shape; microtheories
+accepts only /contextDefinitions/N entries with validated context-record shape.
+N is a canonical nonnegative decimal index. Arbitrary strings or other pointers
+are refused.
+For example, /modelRuns/0 identifies a recorded model suggestion and
+/contextDefinitions/0 identifies a carried versioned review-context definition.
+The existing receipt contract remains unchanged; no native GN fields are added.
+
+A microtheory reference should identify the actual definition with its version
+and content hash, not just a label such as jar9ArchiveArbitrage2026. Use it for
+scope, assumptions, terminology and review rules; ordinary author/date metadata
+remains metadata about that context. Reckoner implements portable review
+contexts inspired by microtheories, not Cyc inference or logical consistency proof.
+
+The BitNet column identifies declared assistance/evidence, not model execution,
+comprehension, model provenance or token suitability. Current validation proves
+artifact bytes, typed receipt-entry shape and pointer resolution; it does not certify the referenced object
+as a genuine BitNet run or a logically valid microtheory. Existing receipt
+validators still validate carried context definitions. Definitions may be up to
+65,536 UTF-8 bytes; this storage limit does not imply any model can consume them.
+Measure model-specific tokenizer counts and reserve prompt/output space separately.
+
+The v3 module exports appendContributionWal, verifyContributionWal and
+safeViewingProjection with the same bounded library interface. The existing
+browser WAL workbench and private bundle remain v2-only. They do not silently
+accept, convert or rewrite v3. To use v3 today a caller must explicitly select
+the v3 library; no form control or native Garrison ingestion is claimed.
+
+Existing v2 chains remain verified by the v2 module and keep their exact bytes.
+Mixed-version append is refused. A future version migration must retain the
+original v2 artifact and checkpoints as separate evidence, not rewrite history.

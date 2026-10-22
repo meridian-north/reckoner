@@ -1,0 +1,43 @@
+;;; Reckoner public context definition
+;;; Readable CycL subset: declarative assertions only. Nothing in this file is executed.
+;;; Section 1. Header: schema, provenance and filing facets
+(contextFormat ReckonerStarterLiteralTranscriptionMt "reckoner.context.cycl.v0.3")
+(contextAuthor ReckonerStarterLiteralTranscriptionMt "Reckoner starter examples")
+(contextCreatedAt ReckonerStarterLiteralTranscriptionMt "2026-10-15T12:00:00.000Z")
+(contextReleaseLabel ReckonerStarterLiteralTranscriptionMt "starter_example")
+(provenanceBasis ReckonerStarterLiteralTranscriptionMt "revision")
+(provenanceStatement ReckonerStarterLiteralTranscriptionMt "Newly written in October 2026 as a starter example for the public Reckoner form, without access to private Garrison Node definitions and without OpenCyc content. Not endorsed by Internet Archive and not promoted for Garrison Node production use. Adapt it, derive a narrower context from it, or write your own.")
+(revisionOf ReckonerStarterLiteralTranscriptionMt "ctx:starter:literal-transcription" 1 "c0ef0ecc03b35a133e8f76b3dfbf4f3f40cbe37847677c27b63b0d9b7b3d35e0")
+(revisionReason ReckonerStarterLiteralTranscriptionMt "Rewritten in format reckoner.context.cycl.v0.3, the native-aligned public format: native six-section order, one assertion per line, and filing and discovery facets in the section 1 header. The meaning, facets, concepts, rules, view settings, hints and references are unchanged from version 1, which keeps its own bytes, hash and reviews.")
+(contextFacet ReckonerStarterLiteralTranscriptionMt "work" "transcription")
+(contextFacet ReckonerStarterLiteralTranscriptionMt "media" "handwriting")
+(contextFacet ReckonerStarterLiteralTranscriptionMt "media" "image")
+(contextFacet ReckonerStarterLiteralTranscriptionMt "media" "pdf")
+(contextFacet ReckonerStarterLiteralTranscriptionMt "media" "print")
+;;; Section 2. Identity and inheritance, with 5W1H emphasis
+(isa ReckonerStarterLiteralTranscriptionMt Microtheory)
+(contextId ReckonerStarterLiteralTranscriptionMt "ctx:starter:literal-transcription")
+(contextVersion ReckonerStarterLiteralTranscriptionMt 2)
+(contextName ReckonerStarterLiteralTranscriptionMt "Literal transcription")
+(comment ReckonerStarterLiteralTranscriptionMt "Record exactly what the source shows, character for character, so that another person comparing your reading with the same copy reaches the same text. Keep spelling, punctuation, capitalization, abbreviations and line breaks as they appear, even when they look wrong today. A literal reading may correct a machine reading, but never the author: errors in the source stay in the transcription and are discussed in the reason. Anything that cannot be read with confidence is marked rather than guessed.")
+(fiveWOneHEmphasis ReckonerStarterLiteralTranscriptionMt "what")
+(fiveWOneHEmphasis ReckonerStarterLiteralTranscriptionMt "where")
+;;; Section 3. Active concepts
+(activeConcept ReckonerStarterLiteralTranscriptionMt "literal reading" "The characters the source shows, in their order, without modernizing or correcting them.")
+(activeConcept ReckonerStarterLiteralTranscriptionMt "machine reading" "Text produced by OCR or another automatic process. It is evidence to check, not a source.")
+(activeConcept ReckonerStarterLiteralTranscriptionMt "uncertain reading" "A reading the copy supports only in part. Say what else the characters could be.")
+(activeConcept ReckonerStarterLiteralTranscriptionMt "illegible" "Characters that cannot be read from the available copy. Say where they are and, if possible, how many.")
+;;; Section 4. Rules
+(contextRule ReckonerStarterLiteralTranscriptionMt "Keep the source spelling, punctuation and capitalization, even when they differ from current usage.")
+(contextRule ReckonerStarterLiteralTranscriptionMt "Change only what differs between the machine reading and the source copy.")
+(contextRule ReckonerStarterLiteralTranscriptionMt "Mark every uncertain or illegible passage and say why. Never fill a gap from memory or expectation.")
+(contextRule ReckonerStarterLiteralTranscriptionMt "Keep line breaks and end-of-line hyphens when a later check could depend on them.")
+(contextRule ReckonerStarterLiteralTranscriptionMt "Put explanations in the reason for the reading, never inside the transcription itself.")
+(lensOperation ReckonerStarterLiteralTranscriptionMt "readingTextSizePx" 17)
+(lensOperation ReckonerStarterLiteralTranscriptionMt "readingLineSpacingPercent" 190)
+;;; Section 5. Disambiguation hints
+(disambiguationHint ReckonerStarterLiteralTranscriptionMt "OCR often confuses similar shapes: 1, l and I; 0 and O; rn and m; cl and d; and ligatures such as ﬁ and ﬂ.")
+(disambiguationHint ReckonerStarterLiteralTranscriptionMt "A misread digit in a date or amount changes the meaning. Check each digit against the copy.")
+(disambiguationHint ReckonerStarterLiteralTranscriptionMt "Faint or broken type can look like punctuation. Compare it with the same letter elsewhere on the page.")
+;;; Section 6. Doctrine references
+(contextReference ReckonerStarterLiteralTranscriptionMt "Reckoner worked example: a notice date (synthetic)" "" "Try a worked example")

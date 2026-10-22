@@ -1,0 +1,41 @@
+;;; Reckoner public context definition
+;;; Readable CycL subset: declarative assertions only. Nothing in this file is executed.
+;;; Section 1. Identity and inheritance
+(contextFormat ReckonerStarterImageInterpretationMt "reckoner.context.cycl.v0.1")
+(isa ReckonerStarterImageInterpretationMt Microtheory)
+(contextId ReckonerStarterImageInterpretationMt "ctx:starter:image-interpretation")
+(contextVersion ReckonerStarterImageInterpretationMt 1)
+(contextName ReckonerStarterImageInterpretationMt "Image interpretation")
+;;; Section 2. Header provenance
+(contextAuthor ReckonerStarterImageInterpretationMt "Reckoner starter examples")
+(contextCreatedAt ReckonerStarterImageInterpretationMt "2026-10-15T00:00:00.000Z")
+(contextReleaseLabel ReckonerStarterImageInterpretationMt "starter_example")
+(provenanceBasis ReckonerStarterImageInterpretationMt "newly_authored")
+(provenanceStatement ReckonerStarterImageInterpretationMt "Newly written in October 2026 as a starter example for the public Reckoner form, without access to private Garrison Node definitions and without OpenCyc content. Not endorsed by Internet Archive and not promoted for Garrison Node production use. Adapt it, derive a narrower context from it, or write your own.")
+(comment ReckonerStarterImageInterpretationMt "Describe what an image shows separately from what you conclude from it. Viewing changes such as zoom, brightness and contrast help a person see; they add no information to the source. Detail that appears only after sharpening, deblurring or other processing is a lead to check against the original, not a confirmed reading. Each statement about the image names the copy and the region it comes from.")
+(contextFacet ReckonerStarterImageInterpretationMt "work" "image interpretation")
+(contextFacet ReckonerStarterImageInterpretationMt "media" "image")
+(contextFacet ReckonerStarterImageInterpretationMt "media" "map")
+(contextFacet ReckonerStarterImageInterpretationMt "media" "photograph")
+(fiveWOneHEmphasis ReckonerStarterImageInterpretationMt "what")
+(fiveWOneHEmphasis ReckonerStarterImageInterpretationMt "where")
+(fiveWOneHEmphasis ReckonerStarterImageInterpretationMt "how")
+;;; Section 3. Active concepts
+(activeConcept ReckonerStarterImageInterpretationMt "original copy" "The image file as received, identified by its SHA-256 hash.")
+(activeConcept ReckonerStarterImageInterpretationMt "viewing adjustment" "A display change, such as zoom, brightness, contrast or background, that leaves the file bytes unchanged.")
+(activeConcept ReckonerStarterImageInterpretationMt "derivative copy" "A processed copy made with another tool. Record the tool, its settings and both file hashes.")
+(activeConcept ReckonerStarterImageInterpretationMt "observation" "What is visible in a stated region of a stated copy.")
+(activeConcept ReckonerStarterImageInterpretationMt "interpretation" "A conclusion drawn from one or more observations, with the reasoning that connects them.")
+;;; Section 4. Rules
+(contextRule ReckonerStarterImageInterpretationMt "Name the image region for each observation, such as page, line or quadrant.")
+(contextRule ReckonerStarterImageInterpretationMt "Record observations before interpretations, in separate sentences.")
+(contextRule ReckonerStarterImageInterpretationMt "Treat detail visible only in a processed copy as uncertain until the original supports it.")
+(contextRule ReckonerStarterImageInterpretationMt "Record viewing adjustments with the reading, and never describe them as changes to the source.")
+(lensOperation ReckonerStarterImageInterpretationMt "imageZoomPercent" 150)
+(lensOperation ReckonerStarterImageInterpretationMt "imageContrastPercent" 130)
+(lensOperation ReckonerStarterImageInterpretationMt "surroundingBackgroundPercent" 60)
+;;; Section 5. Disambiguation hints
+(disambiguationHint ReckonerStarterImageInterpretationMt "High contrast can turn stains, show-through and paper texture into apparent marks.")
+(disambiguationHint ReckonerStarterImageInterpretationMt "Compression artifacts can look like thin strokes beside sharp edges.")
+(disambiguationHint ReckonerStarterImageInterpretationMt "Matching pixel dimensions do not prove that two copies are aligned.")
+;;; Section 6. References

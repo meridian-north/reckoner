@@ -1,0 +1,76 @@
+RECKONER: TRY ONE REVIEW WITH ANOTHER PERSON
+
+Purpose
+Can a new reader check a source, explain a decision, and learn from a mentor without someone coaching them through the controls? This is a usability exercise, not evidence that the document is accurate or that contributors are authenticated.
+
+Before starting
+Use the built-in synthetic example or a public document you have permission to share. Keep private records out of this exercise. Ask permission before observing or recording another person's actions. No LLM, account, or payment is needed for the form itself.
+
+Reader task (about five minutes)
+1. Open the worked example. Find the difference between the machine reading and the source image.
+2. Save a proposed reading with your name or handle and a reason another person could check.
+3. Save a review record to your own device. Explain what else must be kept beside that file.
+4. Locate the saved reading and explain whether anyone else has reviewed it yet.
+
+Mentor task (about five minutes)
+1. Open the reader's saved review record and the same source file.
+2. Review that exact saved reading. Choose a decision supported by what you actually checked.
+3. Choose the mentor role and explain how another person can repeat your check. Say what remains uncertain.
+4. Save your copy of the review record and give it back to the reader.
+
+Return to the reader
+1. Merge the mentor's copy into the original record.
+2. Find the mentor's guidance without help from the observer.
+3. Explain the mentor's check in your own words and repeat it against the source.
+4. Step through the saved history. Identify who proposed the reading, who reviewed it, and which work came first.
+5. Save a text report or print a PDF for your own records.
+
+Observer notes
+Let the participant try before offering help. Record each task as completed alone, completed with help, not completed, or not attempted. Record the exact point of confusion and any unexpected behavior. Do not infer success from a button being clicked: ask the participant to explain what was saved and what the decision means.
+
+Questions afterwards
+- What did you expect the form to do that it did not do?
+- What made the mentor's explanation useful or difficult to follow?
+- Could you distinguish a proposed reading, a review, and a recorded conclusion?
+- Could you find your exported file and reopen it?
+- What would make you want to contribute again?
+
+Accessibility and small screens
+Repeat the tasks with the participant's usual keyboard, assistive technology, or phone if they choose. Record the browser, device, relevant assistive technology, and any blocked task. An agent walkthrough is not a substitute for this human test.
+
+Share feedback
+Report the task, expected behavior, actual behavior, and whether help was needed. Share screenshots or review records only after checking they contain material you are comfortable making public. Contributor names and handles are self-declared. Do not publish another person's observation notes without their permission.
+
+Real-report and viewing-lens exercise
+1. Choose Work through a real report. Open the official source if its embedded preview is unavailable.
+2. Explain the difference between the two assumptions on pages 61 and 51 without treating an estimate as a measurement.
+3. Save your check with a name, source location, reason, and explicit uncertainty; do not invent an OCR error.
+4. In a separate synthetic example, adjust brightness and contrast, save a reading, then inspect the saved baseline and source context in its history for the recorded viewing lens.
+5. Export and reopen the record without reopening the image. Confirm the saved lens remains attached to its reading and the receipt can still be exported unchanged.
+6. Explain why a local review or a CSV row does not by itself establish institutional approval.
+
+External enhancement exercise
+1. Open a local original, then expand Compare an externally enhanced image.
+2. Open a processed copy from your chosen image tool. The original must remain visible above.
+3. Name the tool/version, operations in order, settings, purpose, and checks. Use UNKNOWN for an unavailable value; do not claim a check you did not perform.
+4. Attach it to the draft and save a reading. Inspect the saved enhancement hashes and method in history, then export/reopen the record.
+5. Reopen the derivative and look for the hash match. A hash match establishes byte identity, not truthful recovered detail.
+6. Detach enhanced copies only from a later draft; confirm earlier saved readings retain their attachments.
+
+Reading context exercise (about ten minutes)
+1. Under 4. Contexts, open the starter example "Estimates and their assumptions". Find its broader context and explain, in your own words, what the narrower one adds. Switch Version to 1 and confirm that version 1 still reads within version 1 of its broader context.
+2. Create your own context for a kind of document you know. Write its full meaning and choose more than one facet. Note the measured size shown before saving.
+3. Derive a narrower context from it. Then revise your first context and give a reason. Confirm that version 1 is still listed and that the narrower context still uses version 1.
+4. Open the worked example. Under Reading context, choose your context and save a reading. Find the context version in that reading's history.
+5. As a mentor, review that reading. Then, under Contexts, record a mentor check of the same version against that reading. Explain which version your check covers.
+6. Find where the form says model checks are "not run" and institutional approval is "none". Explain why a blessing is not approval.
+7. Under Source & context, record two people or organizations, an upload date as UNKNOWN, and a source date as stated. Save a reading. Record a relationship between the two entries, and ask another person to accept or dispute it.
+8. Export the review record and your contexts. Reopen both in another browser or on another device, and confirm the readings show the same context version.
+
+Court demo and native Safari acceptance
+1. Use the separately supplied Spearin court demo ZIP; choose a local page PNG and matching machine text. Enter the case title and printed page.
+2. Start the court-specific guide. Can the participant explain the next action without coaching?
+3. Choose Save reading below the reading fields with a reason, export the JSON and confirm the download exists. Reopen that file and the local source image.
+4. Expand full reason and mentor guidance, then replay saved steps. Distinguish AI examples from any actual human review.
+5. In Safari, test keyboard focus through controls, guide heading/exit, Continue, reading size/spacing, and full-text reading with the participant's usual assistive technology. Record exact spoken announcements if observed; do not substitute accessibility-tree text for VoiceOver speech.
+6. Export privately before closing a private-browsing test window; its browser storage is temporary. Keep the participant's normal tabs and drafts unchanged.

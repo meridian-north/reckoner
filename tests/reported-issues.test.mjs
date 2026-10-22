@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {REPORTED_ISSUES,issuePath} from '../dist/reported-issues.js';
+import {prepareDiscoveryReview} from '../dist/discovery-bridge.js';
+test('reported leads preserve provenance/status without inventing OCR or approval',async()=>{for(const row of REPORTED_ISSUES){const {path,candidateId}=issuePath(row.id),context=await prepareDiscoveryReview(path,candidateId);assert.equal(context.sourceUrl,row.source);assert.equal(context.locator,row.locator);assert.equal(context.draft,undefined);assert.match(path.createdBy,/AI-prepared/);assert.equal(path.events.at(-1).match,'possible');assert.match(path.events.at(-1).reason,new RegExp(row.status));}assert.equal(REPORTED_ISSUES.find(x=>x.id==='bookreader-1074').status,'CLOSED');assert.throws(()=>issuePath('unknown'));});

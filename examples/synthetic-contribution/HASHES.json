@@ -1,0 +1,16 @@
+{
+  "schema": "reckoner.synthetic-contribution-example.v1",
+  "note": "Owned synthetic example. Source image and original hOCR bytes are intentionally absent; their declared hashes are owned constants, not real files.",
+  "files": {
+    "contribution.history.json": {
+      "bytes": 15145,
+      "sha256": "d8dff5014fbcfe0df18c4efab5b89806babf6003807dc4f7ebc0936eed9eccdf"
+    },
+    "latest-receipt.json": {
+      "bytes": 6240,
+      "sha256": "bda45d12763a82237740be5bcff4e875f4666a3713abb855050a50a152e5a3ca"
+    }
+  },
+  "genesis": "a68820c993eb586a90cb27bf84c1309f83e7eab43dffe10ff852a0eba2d8a3f4",
+  "tip": "ba61d0cc1d1bfdd4b7db8e9882d0a1224a4b599d66414711860359d8f16caa8e"
+}

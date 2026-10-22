@@ -1,0 +1,9 @@
+Cairn Reckoner
+Developed by Garrison Node / Meridian North.
+Independent public contribution interface. No Internet Archive endorsement implied.
+Private Garrison Node engine, corpora, and implementation are outside this release.
+
+The optional context token budget checker includes @huggingface/tokenizers 0.2.0
+under Apache-2.0. See dist/HF_TOKENIZERS_LICENSE.txt and
+dist/HF_TOKENIZERS_PROVENANCE.json. Model weights and tokenizer data are not
+shipped; selected local tokenizer files are verified against pinned hashes.

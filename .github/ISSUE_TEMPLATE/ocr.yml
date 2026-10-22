@@ -1,0 +1,26 @@
+name: OCR or source-reading issue
+description: Report a passage or reading problem with a source reference
+title: "Reading issue: "
+body:
+  - type: markdown
+    attributes:
+      value: "Use public permitted sources or synthetic examples. Keep full originals out of attachments; provide exact references, a concise description and only a minimal reviewed sidecar or bounded permitted evidence crop. Do not upload confidential records, private keys or unreviewed exports. Attachments may upload immediately. A report is not a verified correction."
+  - type: textarea
+    id: source
+    attributes:
+      label: Source URL, filename and exact page or passage
+    validations:
+      required: true
+  - type: textarea
+    id: observation
+    attributes:
+      label: What you observed and expected
+      description: Distinguish OCR wording, text-layer, search or copying problems. Preserve exact text where permitted.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Checks performed and remaining uncertainty
+    validations:
+      required: true

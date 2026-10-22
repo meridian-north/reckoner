@@ -1,0 +1,206 @@
+2026-10-21 — Experimental-preview menu cleanup
+Compact More action list; one actual Backup control moves with screen width. Full guidance/recovery lives in a native dialog. Distinct source/reading accessible names. Success imports dismiss guidance and focus the reading; failed/empty imports preserve dialog. Experimental preview remains private pending human acceptance and exact release approval.
+
+2026-10-20 — Private source-selection preflight
+Images must decode before replacing the current source; PDF-labelled files need a PDF header (not full structural validation). Empty sources and changed read lengths refuse. Seven isolated browser cases (truncated PNG/JPEG/WebP, false PDF, invalid UTF-8, empty and oversized images) preserved source, unsaved fields and revision count. 388 Node tests pass.
+
+2026-10-20 — Private module transfer lifecycle hardening
+Reproduced stale queued replies after completion/timeout changing status and unlocking a newer handoff. Finished transfers now ignore late replies and late timeout callbacks. Two regression scenarios exercise the actual queue handlers with synthetic transport/timer controls; browser workflow rechecked separately. Not a claim of full control qualification.
+
+2026-10-20 — Private module reload hardening
+Consume one-shot module tickets without adding browser history entries. Reload and Back/Forward retain saved work; sources remain separately reselected. Three targeted tests plus isolated Chrome module save/export/reopen/replay and reload/history checks pass. 384 Node tests pass. Prior release snapshot remains separately pinned pending refresh.
+
+Private source review and usability checkpoint — October 20, 2026 evening
+Reckoner is the accepted name. The main flow is source, supplied reading or claim, your interpretation and reason, save and separate review. A single More menu holds occasional tools. New file creates a separate workspace. Choose source file and bounded drag/drop accept images/PDFs up to20MiB and literal UTF-8 TXT/HTML/XML up to200KB; markup is not executed. Generic data modules carry user-selected sources and questions into separate workspaces without automatic fetching. Declared reading kind and reuse remain unverified.
+Save uses a separate row outside scrolling fields. Measured remaining height accommodates validation banners and wrapped headers; mobile saving returns the comparison into view. Nine synthetic Chrome sizes and an independent five-size recheck passed, including error states, keyboard navigation and duplicate-control checks. Fourteen permitted synthetic exercises passed save/export/reopen/replay with AI assistance declared separately. Generic text and image-region task roundtrips passed. Eleven recovered repair categories have private synthetic practice mappings; no current automatic-detector performance is implied.
+381Node tests and a clean private recovery restore passed. Stable local preview uses127.0.0.1:53022. This is scoped evidence, not exhaustive product clearance. Updated native/assistive-device qualification, outside-model review and John’s own17June roundtrip remain pending. White paper and final selected contribution snapshot are being refreshed. No publication, push, Proton upload or destructive cleanup authorized.
+
+Private sidebar simulation follow-up — October20,2026
+Six scenarios attempted through in-app browser controls: correction, uncertainty/reload, self-review/replay, backup/reopen, cancellation and damaged input. Five produced scoped observations; native sidebar cancellation remains unverified. Screenshot review found compact history using too little height and transient import errors; adjusted history height/scroll reserve and persistent file-panel errors.369Node tests and final synthetic browser regression pass. Human acceptance remains separate. User originals and backups retained; no public action.
+
+Private plain-language comparison update — October20,2026
+Source image, Machine-read text (check against the image), and Your reading (edit here) distinguish document evidence from machine/user interpretations. Saved contributions identify who proposed them; reviews remain separate. Serialized JSON field names unchanged. Root369tests and synthetic backup/source/highlight/replay workflow pass. No human acceptance or publication claimed.
+
+Private practice comparison repair — October20,2026
+Restores only the bundled synthetic example image after import/reload when its name, synthetic flag, MIME, size and exactSHA256 match; never follows receipt URLs or changes saved text. Reestablishes matching known practice highlight. All369Node tests pass; synthetic browser roundtrip checks restored image/highlight. Earlier navigation update explains two possible confirmations. Human acceptance remains pending; no publication or rename.
+
+Private file-navigation repair — October 20, 2026
+Your files panel stays available in compact and full views. Complete backups have descriptive title/time/count labels and exact filename guidance; the page says download requested, not confirmed delivery. A standard new-tab link creates an isolated browser draft before the user chooses a backup. Same-record creator checkpoints remain shared. Import previews actual title/counts/self-declared names. No format migration, drive search, persistent file permission, product rename or publication.
+AI-operated synthetic browser round-trip: two readings, one self-review, three replay events, original workspace retained, cancelled and malformed imports preserve work; keyboard panel and short-window bounds checked. 366 Node tests pass. Independent agent static review accepted applied navigation fixes; it did not rerun the suite. Human second-round backup replay is still pending.
+
+Reckoner development log — October 19, 2026 review candidate
+
+Release state: PRIVATE REVIEW. This document is not publication approval.
+Changes below describe implemented scope, not independent acceptance.
+
+Purpose
+Compare supplied OCR with the source, preserve a reasoned proposed reading,
+credit its contributor, and retain separate reviewer/mentor decisions and
+AI assistance notes. No OCR recognition or host update is performed.
+
+Document-first review
+- Source highlights open an enlarged original region beside the proposal.
+- A pointer/keyboard divider resizes overview and passage panes. Highlights
+  track pane position changes as well as image size changes.
+- Compact Record tools holds backups, readable contribution JSON and mentor
+  navigation. Practice is secondary; Save stays beside the reason.
+- hOCR passage markers use one tab stop with arrow/Home/End navigation.
+- Saved proposals are green, not institutionally accepted. Disputed and
+  needs-review passages remain unresolved. Next/skip preserves unfinished work.
+- Saving a new reading selects it for review when no review reason is being
+  drafted; an unfinished review keeps its selected target.
+- The optional independent Archive-companion appearance retains attribution
+  and a no-endorsement notice. Short-window Save and toast overlap were fixed.
+
+Preservation and interoperability
+- Structured hOCR pins are separate from editable method text; legacy pins
+  remain readable. Different-source loading preserves the prior draft before
+  clearing document context and text. Saved revisions remain retained.
+- hOCR derivative output is strict-XML checked, uses one document element,
+  retains safe OCR metadata and normalizes character detail to word level.
+- Readable contribution JSON uses the existing receipt format. Its structural
+  schema and exact integrity digest rule are documented in CONTRIBUTION_JSON.
+- Optional per-reading AI assistance is a declaration. Contributor, reviewer,
+  mentor and model records stay separate; identities are not authenticated.
+- Experimental WAL retains exact receipt snapshots and prior WAL bytes.
+  Independent checkpoints can detect rollback/substitution relative to a
+  retained state. This is a separate workbench, not a unified main-form save.
+- Invalid hOCR refusals identify page/word numbers without quoting source text.
+  Invalid geometry, unsupported active markup and oversized inputs are refused.
+
+Catalogue and practice
+- Local catalogue review histories and correction-sidecar references survive
+  export/reopen; delayed or stale imports refuse newer saved-state replacement.
+- Held files, unresolved acquisition and unknown possession stay distinct.
+  Next/skip works through held-file metadata; missing-download lists avoid retry
+  actions. This does not coordinate independent visitors or prevent host load
+  through a deployed shared service; that service does not exist here.
+- Bundled practice uses labeled synthetic examples without source-host access.
+  The permitted court demo is separate. The full gathered inventory is private.
+
+Validation evidence and its limits
+Evidence is scoped to its tested snapshot, not one final accepted release.
+- Clean contribution repository a91d703: 351 Node tests passed, zero skipped;
+  five cache tests passed; 83 mirrored files and 138 local references checked.
+- XPS Linux package from 291abf1: 349 Node tests passed, one expected omitted
+  hosting-manifest skip; five cache tests and actual Chrome hOCR roundtrip passed.
+  This is Linux evidence, not Windows qualification.
+- Fable 5.1 independently rechecked frozen 6e7f78e: untouched-word navigation,
+  neutral collapsed candidates, passage review targets and current JSON wording
+  passed. Four revisions and one mentor review survived fresh-origin reopen and
+  replay. Its extracted package passed 347 tests with one expected manifest skip.
+- Later local browser checks cover saved-but-unreviewed/local-accepted card labels,
+  accepted and disputed export/reopen, and non-OCR file-problem reports. Those
+  later changes are not represented as independently rechecked by Fable.
+- Pinned upstream archive-hocr-tools reader 1d23de4 read the local 354-word court
+  page and Reckoner derivatives. An actual Chromium artificial single-word change
+  survived save/export/reopen; the upstream reader saw exactly that change with
+  page dimensions, word boxes and confidence unchanged. Original source files
+  were unchanged. This is not factual correction, full-book or host ingestion proof.
+- Native Safari splitter navigation and keyboard highlight activation were observed.
+  VoiceOver listening is waived as a gate for this edition; no spoken-output
+  acceptance is claimed. Final overall human release acceptance remains open.
+Browser scripts also cover source/hash mismatch refusal, preserved unsaved edits,
+local catalogue exchange/queues and optional WAL archive rollback refusal. Their
+fixtures and assertions define their scope; software runs are not human arbitration.
+
+Known limits before public release
+- Exact matching source bytes and page pixel dimensions are required. Scaled
+  Archive page correspondence and full-book/pageindex seeking are not supplied.
+- Current hOCR derivative is a single nonempty word proposal; no delete,
+  split or merge operation. Cards show first 50 words plus saved passages;
+  selector navigation reaches all parsed words, within documented parser limits.
+- Readable receipt, history backup and optional WAL have different purposes.
+  Individual receipt revisions have parentId, not a prior-revision content hash.
+- Hashes do not prove identity, correctness, rights, safety or trusted time.
+- No shared moderation/admission service, automatic Archive ingestion or
+  institutional adoption agreement is implemented. Benefit remains to be measured.
+- Court-based introduction deck/PDF Rev2 is rendered and installed. Final
+  support operations, final frozen-candidate regression and
+  human release approval remain gates.
+- No wages, employment, verified-person, compliance or endorsement promise.
+
+Recovery and release boundary
+Keep exact sources, history backups and any independently retained checkpoints
+separately. Browser storage is not a preservation guarantee. Never clear site
+data as the first response to a save/reopen error. Contribution files are
+allowlisted for packaging; private development history and inventory are not
+part of that release path. No GitHub publication or access change is authorized
+by building this candidate. Preserve previous candidates and recovery copies.
+
+Independent Fable re-review follow-up
+Fable reported an unchanged adopted word could trap Next/skip behind the draft
+guard. Navigation now distinguishes the untouched generated word form from
+actual reading/reason/uncertainty/assistance/method/locator edits. Skipping that
+untouched form creates no revision or credit. Actual edits remain protected.
+Fable independently revalidated this fix on frozen 6e7f78e. The original review
+and recheck are retained; neither is full-product or release acceptance.
+
+Hardening follow-up
+Duplicate page identities and page/word identity collisions are now refused,
+including oversized page IDs, to prevent ambiguous saved-region references.
+Browser parser refusal checks and normal hOCR roundtrip remain required.
+Per user direction, VoiceOver listening is not a release gate for this edition;
+keyboard/accessibility checks remain in scope. No spoken-output acceptance claimed.
+
+Adversarial export checks also cover event attributes, external media references,
+processing instructions and script-looking proposed text. The derivative strips
+active/reference markup and preserves the proposed string as inert word text.
+This scoped browser check is not a claim of general security certification.
+
+Public strand and model-budget follow-up
+- Public experimental v3 adds typed modelRuns/contextDefinitions references to
+  carried receipts, refuses duplicate or unrelated pointers, and remains separate
+  from private Garrison layouts. Existing v2 remains unchanged; browser workbench
+  integration of v3 is not implemented.
+- Optional local budget checker verifies pinned BitNet tokenizer bytes and measures
+  the supplied rendered prompt against a 4,096-token window with editable answer
+  and margin reserves. No model execution, automatic template construction or
+  main-library storage-policy change is supplied. Component allowances are
+  explicitly approximate; whole supplied prompt fit determines handoff export.
+- Fable independently rechecked frozen37e7327: typed-reference refusals and v2
+  regression, real-tokenizer boundaries in Node, invalid/missing-tokenizer browser
+  refusals, and compact genuine/tampered receipt reopen. No blocker in that delta.
+  Its extracted ZIP run:359 total,358 passed,1 expected hosting-manifest skip.
+  Our full repository run at37e7327:359 passed,0 skipped. Different scopes.
+  Successful real-tokenizer browser load/download was measured by our owned
+  Playwright walkthrough, not by Fable's browser run.
+- Native Safari synthetic mentor needs-review save/export/fresh-origin reopen and
+  replay passed. A separate native hOCR check restored matching-file highlights,
+  refused changed hOCR bytes and retained the saved reason/revision.
+- White paper Rev8 was rendered and all seven pages visually checked; copies and
+  checksums retained on Primary and Mirror. No publication approval follows.
+
+Asynchronous hOCR export hardening
+A new actual-browser regression reproduced caller mutation during SHA-256
+hashing: later source bytes or proposed text could diverge from the supplied
+export inputs. The exporter now owns bounded source bytes and the selected
+proposal/region before awaiting the digest. The before-fix regression failed;
+the after-fix check passed. This is API-boundary hardening, not a claim of a
+known ordinary-UI exploit or general security certification.
+
+Detached hOCR buffers now receive the bounded-source refusal instead of a raw
+ArrayBuffer error. The browser regression failed before and passed after this
+guard. Compact browser checks now cover Enter activation, coarse keyboard
+resizing, min/max clamps and Chromium-emulated touch dragging without changing
+the proposed text. This is not physical-touchscreen or screen-reader acceptance.
+
+Archive-tooling fixture interoperability
+Header-preserving592-word chOCR excerpt passed format-only unchanged-text and
+single artificial-change browser export checks. Pinned archive-hocr-tools
+reader confirmed the expected change and stable geometry/confidence. No source
+image, full-book, current Archive service or host acceptance qualification.
+Reusable bounded local-file format checker included; fixture bytes excluded.
+
+Contribution file (private candidate, 2026-10-20)
+- Decision: the existing creator-history bundle (Record tools → Download backup) is the single
+  default recoverable contribution file; no new transport. See CONTRIBUTION_FILE.md.
+- scripts/verify-contribution.mjs reads bundles as well as receipts: chain verification, optional
+  independent genesis/tip, exact latest-receipt extraction (never overwrites). Receipt behaviour and
+  its refusal wording are unchanged.
+- examples/synthetic-contribution: owned synthetic bundle + exact latest receipt + HASHES.json,
+  built by scripts/make-synthetic-contribution.mjs; tests/contribution-file.test.mjs (4 tests).
+- No UI change. No schema change. Source images and hOCR bytes stay outside the file.
+
+October 21 2026 alpha readiness polish
+Visible Alpha header label; current save/open/review-pack wording in user and support guides; older compact layout checks reconciled with the single More menu and disputed-digit selection. Checks now measure actual source image fit and hash preservation, highlight coordinates, reachable fields and save action, theme contrast, and keyboard/emulated-touch resizing. Native dropdown report and human/assistive-technology acceptance remain open. Private candidate only.

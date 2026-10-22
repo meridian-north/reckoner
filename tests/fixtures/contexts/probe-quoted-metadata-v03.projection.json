@@ -1,0 +1,632 @@
+{
+  "schema": "reckoner.native_projection.v0.2",
+  "conventionSource": "Native six-section order and file_bitnet header syntax as reported on 2026-10-15 from read-only checks of the native process, summarized in CONTEXT_FORMAT.md. A reported convention, not verified compatibility. This mapping uses public field names only.",
+  "source": {
+    "id": "ctx:probe:quoted-metadata-v03",
+    "version": 1,
+    "constant": "ReckonerProbeQuotedMetadataV03Mt",
+    "format": "reckoner.context.cycl.v0.3",
+    "formatNote": "the native six-section order, with filing and discovery facets in the section 1 header",
+    "sha256": "9234accf1963693ef8e7e2eae5e453addda4ec66280943d947b817fe36cde491",
+    "bytes": 2272
+  },
+  "readerBoundary": {
+    "authorText": "not_copied",
+    "nativeReaderInput": "Only projectionText, or nativeHeader.text on its own. The file_bitnet block is the only native syntax either holds, and the JSON around them holds no author text either.",
+    "notForQuoteUnawareReaders": [
+      "source definitions",
+      "context packages",
+      "receipts and their exports",
+      "context sidecars",
+      "projections with schema reckoner.native_projection.v0.1"
+    ],
+    "reason": "A reader that matches assertions or header lines without honouring quotation marks can take quoted author text for metadata. Every file in the list above holds author text. This projection holds only checked values, line numbers, sizes, hashes and the domain facets that pass the native list check."
+  },
+  "sectionOrder": [
+    "Header comment, with schema and provenance or filing metadata",
+    "Identity and inheritance, with 5W1H emphasis",
+    "Active concepts",
+    "Rules",
+    "Disambiguation hints",
+    "Doctrine references"
+  ],
+  "sections": [
+    {
+      "number": 1,
+      "name": "Header comment, with schema and provenance or filing metadata",
+      "assertions": [
+        {
+          "predicate": "contextFormat",
+          "sourceLines": [
+            4,
+            4
+          ],
+          "mapping": "schema",
+          "kind": "declared",
+          "args": [
+            {
+              "type": "checked_text",
+              "value": "reckoner.context.cycl.v0.3"
+            }
+          ]
+        },
+        {
+          "predicate": "contextAuthor",
+          "sourceLines": [
+            5,
+            5
+          ],
+          "mapping": "provenance: author (self-declared)",
+          "kind": "declared",
+          "args": [
+            {
+              "type": "author_text",
+              "bytes": 24,
+              "sha256": "d33556f5ba7c87c7dd12d1abcd86521e60e5dab60ba10ea4f93760cf42556d13"
+            }
+          ]
+        },
+        {
+          "predicate": "contextCreatedAt",
+          "sourceLines": [
+            6,
+            6
+          ],
+          "mapping": "provenance: created",
+          "kind": "declared",
+          "args": [
+            {
+              "type": "checked_text",
+              "value": "2026-10-15T13:00:00.000Z"
+            }
+          ]
+        },
+        {
+          "predicate": "contextReleaseLabel",
+          "sourceLines": [
+            7,
+            7
+          ],
+          "mapping": "filing: public release label (not an admission state)",
+          "kind": "declared",
+          "args": [
+            {
+              "type": "checked_text",
+              "value": "personal"
+            }
+          ]
+        },
+        {
+          "predicate": "provenanceBasis",
+          "sourceLines": [
+            8,
+            8
+          ],
+          "mapping": "provenance: basis",
+          "kind": "declared",
+          "args": [
+            {
+              "type": "checked_text",
+              "value": "newly_authored"
+            }
+          ]
+        },
+        {
+          "predicate": "provenanceStatement",
+          "sourceLines": [
+            9,
+            9
+          ],
+          "mapping": "provenance: statement",
+          "kind": "declared",
+          "args": [
+            {
+              "type": "author_text",
+              "bytes": 234,
+              "sha256": "9445af902f8da785cadf69eaee95828747e18091e5d66c6ad2baaeab42ce04d4"
+            }
+          ]
+        },
+        {
+          "predicate": "contextFacet",
+          "sourceLines": [
+            10,
+            10
+          ],
+          "mapping": "filing and discovery facet",
+          "kind": "declared",
+          "args": [
+            {
+              "type": "checked_text",
+              "value": "domain"
+            },
+            {
+              "type": "author_text",
+              "bytes": 15,
+              "sha256": "edb8116f579d41deafce2e62ddfca0377de27947db509af38553de11f9737d8b"
+            }
+          ]
+        },
+        {
+          "predicate": "contextFacet",
+          "sourceLines": [
+            11,
+            11
+          ],
+          "mapping": "filing and discovery facet",
+          "kind": "declared",
+          "args": [
+            {
+              "type": "checked_text",
+              "value": "domain"
+            },
+            {
+              "type": "author_text",
+              "bytes": 17,
+              "sha256": "145a81821813913427c2ad96eff50e3787bec203fc1ff29ad1aaa96bb479809f"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "name": "Identity and inheritance, with 5W1H emphasis",
+      "assertions": [
+        {
+          "predicate": "isa",
+          "sourceLines": [
+            13,
+            13
+          ],
+          "mapping": "identity: microtheory declaration",
+          "kind": "declared",
+          "args": [
+            {
+              "type": "constant",
+              "value": "Microtheory"
+            }
+          ]
+        },
+        {
+          "predicate": "contextId",
+          "sourceLines": [
+            14,
+            14
+          ],
+          "mapping": "identity: public context ID",
+          "kind": "declared",
+          "args": [
+            {
+              "type": "checked_text",
+              "value": "ctx:probe:quoted-metadata-v03"
+            }
+          ]
+        },
+        {
+          "predicate": "contextVersion",
+          "sourceLines": [
+            15,
+            15
+          ],
+          "mapping": "identity: version",
+          "kind": "declared",
+          "args": [
+            {
+              "type": "number",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "predicate": "contextName",
+          "sourceLines": [
+            16,
+            16
+          ],
+          "mapping": "identity: name",
+          "kind": "declared",
+          "args": [
+            {
+              "type": "author_text",
+              "bytes": 34,
+              "sha256": "2ed241874b79e59a55debd20affcf0c45c843e264961cadf6e069602e9a79852"
+            }
+          ]
+        },
+        {
+          "predicate": "comment",
+          "sourceLines": [
+            17,
+            17
+          ],
+          "mapping": "identity: full meaning",
+          "kind": "declared",
+          "args": [
+            {
+              "type": "author_text",
+              "bytes": 102,
+              "sha256": "f9fc31f71939e1be04d52bc296bc3be75b723fcdd71c2e7655f3b530196e89d5"
+            }
+          ]
+        },
+        {
+          "predicate": "fiveWOneHEmphasis",
+          "sourceLines": [
+            18,
+            18
+          ],
+          "mapping": "5W1H emphasis",
+          "kind": "declared",
+          "args": [
+            {
+              "type": "checked_text",
+              "value": "what"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "name": "Active concepts",
+      "assertions": [
+        {
+          "predicate": "activeConcept",
+          "sourceLines": [
+            20,
+            20
+          ],
+          "mapping": "active concept",
+          "kind": "declared",
+          "args": [
+            {
+              "type": "author_text",
+              "bytes": 14,
+              "sha256": "5d684651caaf0a43415d3972d82c0e822210c1d1f4291c01fcbdfee1acf0f518"
+            },
+            {
+              "type": "author_text",
+              "bytes": 106,
+              "sha256": "2656d04836f7131fd8bb7df98a4f65a97364386447ea858845f46109dab87f92"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "name": "Rules",
+      "assertions": [
+        {
+          "predicate": "contextRule",
+          "sourceLines": [
+            22,
+            22
+          ],
+          "mapping": "rule",
+          "kind": "declared",
+          "args": [
+            {
+              "type": "author_text",
+              "bytes": 120,
+              "sha256": "87505c2ff5e2ae513e7613f6dfe342684a521b8a435cdd11c7ab7c2355074385"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "name": "Disambiguation hints",
+      "assertions": [
+        {
+          "predicate": "disambiguationHint",
+          "sourceLines": [
+            24,
+            24
+          ],
+          "mapping": "disambiguation hint",
+          "kind": "declared",
+          "args": [
+            {
+              "type": "author_text",
+              "bytes": 95,
+              "sha256": "b7bf6f9852c56b1398261a65bebcf62c676d8c85dcaf7d977741d39a93906a0a"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "name": "Doctrine references",
+      "assertions": [
+        {
+          "predicate": "contextReference",
+          "sourceLines": [
+            26,
+            26
+          ],
+          "mapping": "doctrine reference: public label, link and location",
+          "kind": "declared",
+          "args": [
+            {
+              "type": "author_text",
+              "bytes": 32,
+              "sha256": "ab68d03d011726c3c56b35f8d99c5bb521e61bdd6bfab42052459484a1847fa4"
+            },
+            {
+              "type": "author_text",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+              "type": "author_text",
+              "bytes": 28,
+              "sha256": "89b653ffed5e587bb99f74802b79e52cd2e5f9aef79f768bffc8f4e6b4d5c3ac"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "headerMetadata": [
+    {
+      "field": "schema",
+      "args": [
+        {
+          "type": "checked_text",
+          "value": "reckoner.context.cycl.v0.3"
+        }
+      ],
+      "source": {
+        "predicate": "contextFormat",
+        "lines": [
+          4,
+          4
+        ],
+        "definitionSha256": "9234accf1963693ef8e7e2eae5e453addda4ec66280943d947b817fe36cde491"
+      }
+    },
+    {
+      "field": "provenance: author (self-declared)",
+      "args": [
+        {
+          "type": "author_text",
+          "bytes": 24,
+          "sha256": "d33556f5ba7c87c7dd12d1abcd86521e60e5dab60ba10ea4f93760cf42556d13"
+        }
+      ],
+      "source": {
+        "predicate": "contextAuthor",
+        "lines": [
+          5,
+          5
+        ],
+        "definitionSha256": "9234accf1963693ef8e7e2eae5e453addda4ec66280943d947b817fe36cde491"
+      }
+    },
+    {
+      "field": "provenance: created",
+      "args": [
+        {
+          "type": "checked_text",
+          "value": "2026-10-15T13:00:00.000Z"
+        }
+      ],
+      "source": {
+        "predicate": "contextCreatedAt",
+        "lines": [
+          6,
+          6
+        ],
+        "definitionSha256": "9234accf1963693ef8e7e2eae5e453addda4ec66280943d947b817fe36cde491"
+      }
+    },
+    {
+      "field": "filing: public release label (not an admission state)",
+      "args": [
+        {
+          "type": "checked_text",
+          "value": "personal"
+        }
+      ],
+      "source": {
+        "predicate": "contextReleaseLabel",
+        "lines": [
+          7,
+          7
+        ],
+        "definitionSha256": "9234accf1963693ef8e7e2eae5e453addda4ec66280943d947b817fe36cde491"
+      }
+    },
+    {
+      "field": "provenance: basis",
+      "args": [
+        {
+          "type": "checked_text",
+          "value": "newly_authored"
+        }
+      ],
+      "source": {
+        "predicate": "provenanceBasis",
+        "lines": [
+          8,
+          8
+        ],
+        "definitionSha256": "9234accf1963693ef8e7e2eae5e453addda4ec66280943d947b817fe36cde491"
+      }
+    },
+    {
+      "field": "provenance: statement",
+      "args": [
+        {
+          "type": "author_text",
+          "bytes": 234,
+          "sha256": "9445af902f8da785cadf69eaee95828747e18091e5d66c6ad2baaeab42ce04d4"
+        }
+      ],
+      "source": {
+        "predicate": "provenanceStatement",
+        "lines": [
+          9,
+          9
+        ],
+        "definitionSha256": "9234accf1963693ef8e7e2eae5e453addda4ec66280943d947b817fe36cde491"
+      }
+    },
+    {
+      "field": "filing and discovery facet",
+      "args": [
+        {
+          "type": "checked_text",
+          "value": "domain"
+        },
+        {
+          "type": "author_text",
+          "bytes": 15,
+          "sha256": "edb8116f579d41deafce2e62ddfca0377de27947db509af38553de11f9737d8b"
+        }
+      ],
+      "source": {
+        "predicate": "contextFacet",
+        "lines": [
+          10,
+          10
+        ],
+        "definitionSha256": "9234accf1963693ef8e7e2eae5e453addda4ec66280943d947b817fe36cde491"
+      }
+    },
+    {
+      "field": "filing and discovery facet",
+      "args": [
+        {
+          "type": "checked_text",
+          "value": "domain"
+        },
+        {
+          "type": "author_text",
+          "bytes": 17,
+          "sha256": "145a81821813913427c2ad96eff50e3787bec203fc1ff29ad1aaa96bb479809f"
+        }
+      ],
+      "source": {
+        "predicate": "contextFacet",
+        "lines": [
+          11,
+          11
+        ],
+        "definitionSha256": "9234accf1963693ef8e7e2eae5e453addda4ec66280943d947b817fe36cde491"
+      }
+    }
+  ],
+  "nativeHeader": {
+    "syntax": "garrison/file_bitnet/v1 comment block",
+    "status": "emitted",
+    "fields": {
+      "domain": [
+        "public research",
+        "source comparison"
+      ]
+    },
+    "domainFacets": [
+      {
+        "line": 10,
+        "bytes": 15,
+        "sha256": "edb8116f579d41deafce2e62ddfca0377de27947db509af38553de11f9737d8b",
+        "representable": true
+      },
+      {
+        "line": 11,
+        "bytes": 17,
+        "sha256": "145a81821813913427c2ad96eff50e3787bec203fc1ff29ad1aaa96bb479809f",
+        "representable": true
+      }
+    ],
+    "unmappedFacetGroups": [],
+    "text": ";; schema: garrison/file_bitnet/v1\n;; file_bitnet:\n;;   domain: [public research, source comparison]\n;; end_file_bitnet\n",
+    "note": "Written from the authored domain facets only, in definition order. No other key is written, and nothing is taken from the author, the release label or quoted text."
+  },
+  "review": {
+    "public": {
+      "identity": "self_declared",
+      "proposed": true,
+      "humanBlessings": 0,
+      "declines": 0,
+      "mentorChecks": 0,
+      "withdrawn": false
+    },
+    "modelEvidence": "not_run",
+    "claims": {
+      "promotion": "none",
+      "ratification": "none"
+    },
+    "nativeAdmission": {
+      "institutional": "not_established",
+      "model": "not_established"
+    },
+    "note": "Public review is personal and self-declared. It is not native institutional or model admission, and claims recorded elsewhere are not admission."
+  },
+  "releaseLabel": {
+    "value": "personal",
+    "meaning": "A personal public context. Not released and not admitted."
+  },
+  "productionStatus": "not_inferred",
+  "unsupported": [
+    {
+      "item": "native header keys other than domain",
+      "status": "not_emitted",
+      "reason": "Only authored domain facets are written, in the file_bitnet block. No other header key is emitted or inferred: no ownership, status or authority is taken from the self-declared author or from any other field."
+    },
+    {
+      "item": "native BitNet predicates and scoring",
+      "status": "not_emitted",
+      "reason": "BitNet flags are measurements kept outside definitions, and none has run. See the context sidecar."
+    },
+    {
+      "item": "native institutional admission",
+      "status": "not_established",
+      "reason": "The public form neither grants nor infers it."
+    },
+    {
+      "item": "native model admission or promotion",
+      "status": "not_established",
+      "reason": "Promotion or ratification claims recorded elsewhere are reported separately and are not admission."
+    },
+    {
+      "item": "production status or authority",
+      "status": "not_inferred",
+      "reason": "Nothing is inferred from a release label, a review, a claim or quoted text."
+    },
+    {
+      "item": "other native metadata formats",
+      "status": "not_produced",
+      "reason": "Directory-level stubs, per-file contract wrappers and cascade cards are distinct formats. None is produced here, and the file_bitnet block proves nothing about them."
+    },
+    {
+      "item": "author text",
+      "status": "not_copied",
+      "reason": "It stays in the source definition, pinned by hash, so quoted wording cannot be read as metadata here. Each field gives its source line, size and SHA-256 instead."
+    },
+    {
+      "item": "native fields or rules beyond the declared public fields",
+      "status": "not_provided",
+      "reason": "Only public fields are mapped; nothing is invented to fill native fields."
+    }
+  ],
+  "compatibility": {
+    "claim": "none",
+    "note": "Sections follow the reported native order, a convention rather than verified compatibility. Parsing a projection or a definition does not establish compatibility, and a reader that ignores quotation marks can misread any file that holds author text. Native confirmation of this projection is pending."
+  },
+  "projectionText": {
+    "text": ";;; Reckoner native-aligned projection, schema reckoner.native_projection.v0.2\n;;; A derived metadata view of one public definition. It is not a definition and cannot be imported or relabelled.\n;;; It copies no author text. Each field gives its source line, size and SHA-256 instead, except that authored domain facets the native list syntax carries exactly are written in the file_bitnet block.\n;;; Derived from ctx:probe:quoted-metadata-v03 version 1, constant ReckonerProbeQuotedMetadataV03Mt, format reckoner.context.cycl.v0.3, SHA-256 9234accf1963693ef8e7e2eae5e453addda4ec66280943d947b817fe36cde491, 2272 bytes.\n;;; Review is public and self-declared. Native institutional and model admission are not established. Production status is not inferred.\n;;; Section 1. Header comment, with schema and provenance or filing metadata\n;; schema: garrison/file_bitnet/v1\n;; file_bitnet:\n;;   domain: [public research, source comparison]\n;; end_file_bitnet\n;;; line 4 contextFormat = reckoner.context.cycl.v0.3\n;;; line 5 contextAuthor = author text of 24 bytes, SHA-256 d33556f5ba7c87c7dd12d1abcd86521e60e5dab60ba10ea4f93760cf42556d13\n;;; line 6 contextCreatedAt = 2026-10-15T13:00:00.000Z\n;;; line 7 contextReleaseLabel = personal\n;;; line 8 provenanceBasis = newly_authored\n;;; line 9 provenanceStatement = author text of 234 bytes, SHA-256 9445af902f8da785cadf69eaee95828747e18091e5d66c6ad2baaeab42ce04d4\n;;; line 10 contextFacet = domain | author text of 15 bytes, SHA-256 edb8116f579d41deafce2e62ddfca0377de27947db509af38553de11f9737d8b\n;;; line 11 contextFacet = domain | author text of 17 bytes, SHA-256 145a81821813913427c2ad96eff50e3787bec203fc1ff29ad1aaa96bb479809f\n;;; Section 2. Identity and inheritance, with 5W1H emphasis\n;;; line 13 isa = Microtheory\n;;; line 14 contextId = ctx:probe:quoted-metadata-v03\n;;; line 15 contextVersion = 1\n;;; line 16 contextName = author text of 34 bytes, SHA-256 2ed241874b79e59a55debd20affcf0c45c843e264961cadf6e069602e9a79852\n;;; line 17 comment = author text of 102 bytes, SHA-256 f9fc31f71939e1be04d52bc296bc3be75b723fcdd71c2e7655f3b530196e89d5\n;;; line 18 fiveWOneHEmphasis = what\n;;; Section 3. Active concepts\n;;; line 20 activeConcept = author text of 14 bytes, SHA-256 5d684651caaf0a43415d3972d82c0e822210c1d1f4291c01fcbdfee1acf0f518 | author text of 106 bytes, SHA-256 2656d04836f7131fd8bb7df98a4f65a97364386447ea858845f46109dab87f92\n;;; Section 4. Rules\n;;; line 22 contextRule = author text of 120 bytes, SHA-256 87505c2ff5e2ae513e7613f6dfe342684a521b8a435cdd11c7ab7c2355074385\n;;; Section 5. Disambiguation hints\n;;; line 24 disambiguationHint = author text of 95 bytes, SHA-256 b7bf6f9852c56b1398261a65bebcf62c676d8c85dcaf7d977741d39a93906a0a\n;;; Section 6. Doctrine references\n;;; line 26 contextReference = author text of 32 bytes, SHA-256 ab68d03d011726c3c56b35f8d99c5bb521e61bdd6bfab42052459484a1847fa4 | author text of 0 bytes, SHA-256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 | author text of 28 bytes, SHA-256 89b653ffed5e587bb99f74802b79e52cd2e5f9aef79f768bffc8f4e6b4d5c3ac\n;;; The public form does not provide native header keys other than domain; native BitNet predicates and scoring; native institutional admission; native model admission or promotion; production status or authority; other native metadata formats; author text; native fields or rules beyond the declared public fields.\n",
+    "sha256": "72c41d17404743628ee75d60abc0d5bd3535960c76a34f190a1558b14264979b",
+    "bytes": 3379
+  },
+  "integrity": {
+    "algorithm": "SHA-256",
+    "canonicalization": "Recursively sorted JSON keys; array order preserved; compact JSON",
+    "bodySha256": "c439db24f25519853caf052d8f7131bfcb8433ecf0c5c4225e34e4ec4641fa4a"
+  }
+}

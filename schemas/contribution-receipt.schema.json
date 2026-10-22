@@ -1,0 +1,340 @@
+{
+  "type": "object",
+  "required": [
+    "schema",
+    "id",
+    "createdAt",
+    "exportedAt",
+    "context",
+    "sourceImage",
+    "revisions",
+    "reviews",
+    "connections",
+    "integrity",
+    "scope"
+  ],
+  "properties": {
+    "schema": {
+      "const": "garrison.cairn.receipt.v0.1"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "exportedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "context": {
+      "$ref": "#/$defs/context"
+    },
+    "sourceImage": {
+      "$ref": "#/$defs/sourceImage"
+    },
+    "revisions": {
+      "type": "array",
+      "maxItems": 500,
+      "items": {
+        "$ref": "#/$defs/revision"
+      }
+    },
+    "reviews": {
+      "type": "array",
+      "maxItems": 2000,
+      "items": {
+        "$ref": "#/$defs/review"
+      }
+    },
+    "connections": {
+      "type": "array"
+    },
+    "modelRuns": {
+      "type": "array",
+      "maxItems": 200
+    },
+    "resolutions": {
+      "type": "array",
+      "maxItems": 500
+    },
+    "scope": {
+      "type": "object"
+    },
+    "integrity": {
+      "type": "object",
+      "required": [
+        "algorithm",
+        "canonicalization",
+        "bodySha256"
+      ],
+      "properties": {
+        "algorithm": {
+          "const": "SHA-256"
+        },
+        "canonicalization": {
+          "const": "Recursively sorted JSON keys; array order preserved; compact JSON"
+        },
+        "bodySha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:reckoner:schemas:garrison-cairn-receipt:v0.1:structural:1",
+  "title": "Reckoner existing contribution receipt \u2014 structural schema",
+  "description": "Names are self-declared; proposals are not host acceptance. Optional extensions remain permitted. Run verifyReceipt for digest, ancestry, review targets, coordinate ordering and extension semantics. Not an Internet Archive ingestion contract.",
+  "$defs": {
+    "hocrPin": {
+      "type": "object",
+      "required": [
+        "hocrFile",
+        "hocrBytes",
+        "hocrSha256",
+        "sourceSha256",
+        "pageId",
+        "pageIndex",
+        "wordId",
+        "originalWord",
+        "bbox",
+        "ocrConfidence"
+      ],
+      "properties": {
+        "hocrFile": {
+          "type": "string",
+          "minLength": 1
+        },
+        "hocrBytes": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2097152
+        },
+        "hocrSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "sourceSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "pageId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "pageIndex": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 99
+        },
+        "wordId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "originalWord": {
+          "type": "string",
+          "minLength": 1
+        },
+        "bbox": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "integer",
+            "minimum": -1000000,
+            "maximum": 1000000
+          }
+        },
+        "ocrConfidence": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100
+            }
+          ]
+        }
+      }
+    },
+    "reading": {
+      "type": "object",
+      "required": [
+        "original",
+        "proposed",
+        "contributor",
+        "reason",
+        "uncertainty"
+      ],
+      "properties": {
+        "original": {
+          "type": "string",
+          "minLength": 1
+        },
+        "proposed": {
+          "type": "string",
+          "minLength": 1
+        },
+        "contributor": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "uncertainty": {
+          "type": "string",
+          "minLength": 1
+        },
+        "assistance": {
+          "type": "string",
+          "maxLength": 4000,
+          "description": "Optional self-declared AI model and assistance note for this reading; absence is unknown."
+        }
+      }
+    },
+    "context": {
+      "type": "object",
+      "required": [],
+      "properties": {
+        "hocr": {
+          "$ref": "#/$defs/hocrPin"
+        },
+        "sourceUrl": {
+          "type": "string"
+        },
+        "sourceFile": {
+          "type": "string"
+        },
+        "locator": {
+          "type": "string"
+        },
+        "method": {
+          "type": "string"
+        }
+      }
+    },
+    "sourceImage": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "required": [
+            "sha256"
+          ],
+          "properties": {
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "name": {
+              "type": "string"
+            },
+            "mime": {
+              "type": "string"
+            },
+            "size": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        }
+      ]
+    },
+    "revision": {
+      "type": "object",
+      "required": [
+        "id",
+        "number",
+        "parentId",
+        "observedAt",
+        "reading",
+        "context",
+        "sourceImage"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "number": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "parentId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "reading": {
+          "$ref": "#/$defs/reading"
+        },
+        "context": {
+          "$ref": "#/$defs/context"
+        },
+        "sourceImage": {
+          "$ref": "#/$defs/sourceImage"
+        }
+      }
+    },
+    "review": {
+      "type": "object",
+      "required": [
+        "id",
+        "revisionId",
+        "reviewer",
+        "decision",
+        "reason",
+        "recordedAt"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "revisionId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reviewer": {
+          "type": "string",
+          "minLength": 1
+        },
+        "role": {
+          "enum": [
+            "reviewer",
+            "mentor"
+          ]
+        },
+        "decision": {
+          "enum": [
+            "accepted",
+            "disputed",
+            "needs_review"
+          ]
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "recordedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    }
+  }
+}

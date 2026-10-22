@@ -1,0 +1,9 @@
+{
+  "package": "@huggingface/tokenizers",
+  "version": "0.2.0",
+  "license": "Apache-2.0",
+  "source": "https://registry.npmjs.org/@huggingface/tokenizers/-/tokenizers-0.2.0.tgz",
+  "npmIntegrityVerified": true,
+  "sha256": "1c4a848f86156201c033d6cd08c4cf81ae1088552acec3367f31ef086edf5af0",
+  "scope": "Tokenizer only; no model weights. Model tokenizer JSON files supplied locally and checked against pinned official hashes."
+}

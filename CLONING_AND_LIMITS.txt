@@ -1,0 +1,52 @@
+Cloning and local validation — experimental Alpha
+
+Keep source caches and private exports outside Git. No model, API key, account, npm install or network service is required for local use.
+
+Historical validated runtime: Node24.19.0 on macOS and XPS Linux; Python3.12.3 on XPS Linux and local Python3.14. Windows remains unqualified. Other versions are not established by these results.
+
+From either a new checkout or the extracted ZIP, inside reckoner/:
+  node --test tests/*.test.mjs
+  python3 tests/cache-permitted-source.test.py
+  python3 -m http.server 8000 --bind 127.0.0.1 --directory dist
+Repository maintainers only (the ZIP intentionally omits the hosting manifest and complete docs/ mirror):
+  python3 scripts/refresh-downloads.py --check
+  node scripts/sync-docs.mjs --check
+
+Open http://127.0.0.1:8000/ in a supported browser. The ZIP includes dist/ but not the hosted docs/ tree; serve dist/ for both clone and ZIP use. Browser edits require Web Locks on localhost or HTTPS. Unsupported catalogue writers refuse edits; reading/export still work.
+
+Use a tiny permitted source or the example first. Direct local source-image/PDF opening is limited to20MiB and literal UTF-8 TXT/HTML/XML to200KB; do not assume multigigabyte documents load in this form. Keep a full original separately or in the explicitly permitted local cache, and inspect a page/crop or public source reference. Source files are not embedded in review-history JSON or catalogue metadata. JSON text/PDF reports differ from a complete history backup.
+
+The catalogue is local metadata with a static seed list, not a shared cloud database. Peer review states are self-declared, not authenticated identities or institutional approval. Cooperative app writers use Web Locks and stale-baseline checks. A successful save stores the submitted snapshot; newer form drafts remain unsaved and retained on the page. Export saved metadata and preserve any newer text separately before closing. Do not treat browser storage as a backup, tamper-proof ledger or power-loss guarantee.
+
+Cache utility: explicit source, target, rights evidence, version and positive byte budget required. It never downloads/uploads or alters originals; rights evidence is an operator assertion. Actual source privacy and permission still govern use. Cache objects and receipts remain outside repositories, even private ones. Do not run a public server over a source cache or export folder.
+
+Known release checks still required: native Safari roundtrip qualification, independent human first-reader review, final frozen-candidate regression, approved publication and actual HTTPS-origin checks. The exact 1162d08 package passed the keyboard-only discovery route on XPS Linux; macOS headless Chrome also failed a plain native-select control, so that environment result remains recorded separately. Minimal text correction and bounded PNG crop exporters exist in this experimental Alpha with explicit size and provenance limits. Shared admission and Archive collection-note integration remain proposed. No public shipping or Archive integration is implied.
+
+Before hosting, run python3 scripts/check-site.py. It checks local HTML references and literal relative module imports. It does not contact external sites or prove production MIME headers; repeat actual-browser checks on the final approved HTTPS origin.
+
+October 19 document-first candidate checks additionally used Node20.20.2 on macOS, installed Google Chrome and an operator-provided Playwright module. No npm dependencies are needed for the application or Node unit tests. Optional browser scripts require Playwright plus a browser installation; set PLAYWRIGHT_MODULE to its absolute module path and CHROMIUM_PATH to the installed browser executable when these are not discoverable by the default import/launch. These operator paths are configuration, not files shipped in the package. Native Safari requires a separate native-browser check. VoiceOver speech is untested and, per the user’s release direction, is not a gate for this edition; keyboard access remains required.
+
+Optional checks:
+  node scripts/file-problem-walkthrough.mjs OUTPUT_DIRECTORY
+  node scripts/hocr-export-check.mjs
+  node scripts/hocr-form-walkthrough.mjs OUTPUT_DIRECTORY
+  node scripts/compact-layout-check.mjs OUTPUT_DIRECTORY
+  node scripts/practice-judgment-check.mjs
+  node scripts/local-hocr-walkthrough.mjs LOCAL_IMAGE LOCAL_HOCR OUTPUT_DIRECTORY [--test-change]
+The last check reads already-permitted local files and performs no source-host downloads. It is a software compatibility test, not a factual correction or human acceptance claim. Test-generated records identify AI software testing.
+
+The optional --test-change flag makes a deliberately artificial word change,
+labels it as software testing, and checks the reopened proposal. Never submit
+that test artifact as a factual correction. The default leaves the reading unchanged.
+
+Optional pinned BitNet budget browser check:
+  node scripts/context-token-budget-walkthrough.mjs TOKENIZER_JSON CONFIG_JSON OUTPUT_DIRECTORY
+Use the official files identified by the local checker’s pinned model revision.
+This check verifies their hashes before starting, never downloads tokenizer data,
+and blocks outbound browser requests. It tests fit/refusal and exact downloaded
+handoff text with owned synthetic inputs; no inference or comprehension is tested.
+
+October20 evening update
+The header uses New file, Open saved review, Examples, Save to file and More, with narrow-screen actions moved into More. Use More > Open a review pack for reckoner.data-module.v1 packages. Choose a manifest and its extracted source folder or one matching file. ZIP extraction and external-source downloads are manual; import does not run tasks, execute markup or contact source hosts. The older ocr.source-worklist.v1 list has a separate importer linked from the module page. Keep original sources beside review/history backups. See PRACTICE_DATA_MODULES.md for exact bounds.
+
+Current automated evidence includes393 Node tests, fourteen synthetic exercise roundtrips, nine simulated screen sizes and an independent five-size UI recheck. Physical-device accessibility, whole-product coverage and the final human corrected-reading acceptance are separate outstanding checks. A stable operator preview address is a convenience of the local setup, not a hosted release or a requirement that users choose the same port.

@@ -1,0 +1,20 @@
+/* Independent archive companion theme; no official logo or endorsement. */
+:root[data-appearance="archive-companion"]{--ink:#242424;--paper:#fafafa;--muted:#555;--line:#c9c9c9;--soft:#ededed;--accent:#8b2424!important}
+:root[data-appearance="archive-companion"] header{background:#262626;color:#fff;border-bottom:4px solid var(--accent)}
+:root[data-appearance="archive-companion"] header .wordmark,:root[data-appearance="archive-companion"] header .local{color:#fff}
+:root[data-appearance="archive-companion"] header button{background:#fff;color:#242424;border-color:#fff}
+:root[data-appearance="archive-companion"] h1{font-family:Georgia,serif;font-size:clamp(36px,4vw,58px)}
+:root[data-appearance="archive-companion"] .intro{padding:35px 0;gap:38px}
+:root[data-appearance="archive-companion"] button:focus-visible,:root[data-appearance="archive-companion"] a:focus-visible,:root[data-appearance="archive-companion"] input:focus-visible,:root[data-appearance="archive-companion"] textarea:focus-visible,:root[data-appearance="archive-companion"] select:focus-visible{outline:3px solid var(--focus,#005fcc);outline-offset:3px}
+.archive-companion-bar{display:none;max-width:1500px;margin:auto;padding:12px 4.5%;border-bottom:1px solid var(--line);font-size:13px;gap:10px 22px;align-items:center;flex-wrap:wrap}
+:root[data-appearance="archive-companion"] .archive-companion-bar{display:flex}
+.archive-companion-bar strong{margin-right:auto}.archive-companion-bar a{color:var(--accent);text-underline-offset:3px}
+@media print{.archive-companion-bar{display:none!important}:root[data-appearance="archive-companion"] header{background:white;color:black;border-bottom:1px solid #555}:root[data-appearance="archive-companion"] header .wordmark{color:black}}
+
+/* Keep added controls and visually hidden file inputs within the mobile viewport. */
+header{flex-wrap:wrap}.file-button{position:relative}.file-button input{left:0;top:0}
+
+.copy-passage-controls{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:8px 0}.copy-passage-controls .helper{flex-basis:100%}
+
+/* Header links must remain legible alongside native buttons in every skin. */
+:root[data-appearance="archive-companion"] header #oc-start a.quiet{background:#fff;color:#242424;border-color:#fff}

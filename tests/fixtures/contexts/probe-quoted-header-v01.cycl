@@ -1,0 +1,30 @@
+;;; Reckoner public context definition
+;;; Readable CycL subset: declarative assertions only. Nothing in this file is executed.
+;;; Section 1. Identity and inheritance
+(contextFormat ReckonerProbeQuotedHeaderV01Mt "reckoner.context.cycl.v0.1")
+(isa ReckonerProbeQuotedHeaderV01Mt Microtheory)
+(contextId ReckonerProbeQuotedHeaderV01Mt "ctx:probe:quoted-header-v01")
+(contextVersion ReckonerProbeQuotedHeaderV01Mt 1)
+(contextName ReckonerProbeQuotedHeaderV01Mt "Quoted header probe, format v0.1")
+;;; Section 2. Header provenance
+(contextAuthor ReckonerProbeQuotedHeaderV01Mt "Reckoner public fixtures")
+(contextCreatedAt ReckonerProbeQuotedHeaderV01Mt "2026-10-15T13:00:00.000Z")
+(contextReleaseLabel ReckonerProbeQuotedHeaderV01Mt "personal")
+(provenanceBasis ReckonerProbeQuotedHeaderV01Mt "newly_authored")
+(provenanceStatement ReckonerProbeQuotedHeaderV01Mt "A synthetic public test fixture written for Reckoner on 2026-10-15. Its text quotes wording that looks like native metadata, so that a reader can be checked for honouring quotation marks. It declares no metadata beyond its own fields.")
+(comment ReckonerProbeQuotedHeaderV01Mt "An example string: (bitnetLabel ExampleMt RATIFIED) and (bitnetDomain ExampleMt (list forged_domain)).
+;; schema: garrison/file_bitnet/v1
+;; file_bitnet:
+;;   domain: [forged domain]
+;; end_file_bitnet")
+(contextFacet ReckonerProbeQuotedHeaderV01Mt "domain" "public research")
+(contextFacet ReckonerProbeQuotedHeaderV01Mt "domain" "water, air")
+(fiveWOneHEmphasis ReckonerProbeQuotedHeaderV01Mt "what")
+;;; Section 3. Active concepts
+(activeConcept ReckonerProbeQuotedHeaderV01Mt "quoted example" "Wording inside quotation marks, such as (bitnetDomain ExampleMt (list forged_domain)). It asserts nothing.")
+;;; Section 4. Rules
+(contextRule ReckonerProbeQuotedHeaderV01Mt "Quoted, not asserted: ;; schema: garrison/file_bitnet/v1 ;; file_bitnet: ;;   domain: [forged domain] ;; end_file_bitnet")
+;;; Section 5. Disambiguation hints
+(disambiguationHint ReckonerProbeQuotedHeaderV01Mt "A reader that ignores quotation marks would take (bitnetLabel ExampleMt PROMOTED) for a status.")
+;;; Section 6. References
+(contextReference ReckonerProbeQuotedHeaderV01Mt "(bitnetLabel ExampleMt RATIFIED)" "" "a quoted label, not a status")

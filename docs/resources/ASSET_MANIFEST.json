@@ -1,0 +1,42 @@
+{
+  "schema": "reckoner.downloads-manifest.v1",
+  "files": [
+    {
+      "file": "Reckoner_Contribution_Review.zip",
+      "bytes": 845663,
+      "sha256": "39c101c2deb6ee7ad0b969ceea3d3ef145d9adc03145af8b01375355a47958ea",
+      "scope": "Standalone review prototype source bundle"
+    },
+    {
+      "file": "USER_GUIDE.md",
+      "bytes": 48244,
+      "sha256": "38c6be994a8efbf210038bd09c6f9756e76c747b40430af6d4ad46691b8bfec5",
+      "scope": "Quick-start guide"
+    },
+    {
+      "file": "PUBLIC_SAFE_FAQ.md",
+      "bytes": 15898,
+      "sha256": "db966c80c10572e1122780d25ee5ee7be32284dc3b6c6ad4a1a6ab186f9f0d31",
+      "scope": "Public-safe FAQ"
+    },
+    {
+      "file": "Reckoner_Introduction.pdf",
+      "bytes": 47017,
+      "sha256": "0ad4a5042bb17d139deed9c5bccd6fb0122781d5b650227f193679d01d03d4bc",
+      "scope": "Sanitized event introduction"
+    },
+    {
+      "file": "Reckoner_Introduction.pptx",
+      "bytes": 38767,
+      "sha256": "37c62121669241270df828c5c5491f743163935fcc4e419ae452a16fa5eeb8ad",
+      "scope": "Sanitized editable event introduction"
+    },
+    {
+      "file": "ADOPTION_PROPOSAL.md",
+      "bytes": 13221,
+      "sha256": "ba8b5e00afa852e319b132c37dcc56492b5379de651e721810d53739d3a000bf",
+      "scope": "Human review pilot proposal; collection attachment and reading-list service remain proposed"
+    }
+  ],
+  "scope": "Independent contribution materials; hashes check bytes, not identity or approval."
+}
