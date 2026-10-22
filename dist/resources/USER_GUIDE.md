@@ -1,5 +1,7 @@
 # Reckoner: record an interpretation, let others check it
 
+The browser demo opens the first of 14 synthetic examples automatically on a first visit. Use Next example and Previous to browse, or New file for your own source. Existing saved work is preserved.
+
 ## Current private workspace
 
 The header offers **New file**, **Open saved review**, **Examples**, **Save to file** and one **More** menu. On narrow screens, New file and Open saved review move into More; on the narrowest screens Save to file moves there too. New file creates a separate browser workspace; it does not delete the previous one. Browser Back can return to that workspace. Exported backups remain the durable recovery copy.

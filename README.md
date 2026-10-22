@@ -2,6 +2,8 @@
 
 Experimental Alpha for testers and contributors. Record an interpretation. Let others check it. Feedback, reproducible bug reports and contributions are welcome. Keep original source files and exported review histories independently. See [known limits](EXPERIMENTAL_PREVIEW.txt).
 
+**[Open Reckoner — 14 live examples](https://meridian-north.github.io/reckoner/)**. A first visit opens Example 1 automatically; use **Next example** and **Previous** to browse. Returning saved work is preserved. Choose **New file** to start your own review.
+
 Start with the [quick-start guide](USER_GUIDE.md) for a first review, file sharing, and saving your work.
 
 A document review form developed by John Reed and Garrison Node / Meridian North. Compare a source with a reading or claim, record interpretations and decisions, and replay the saved path to resolution. The core workflow needs no LLM.
