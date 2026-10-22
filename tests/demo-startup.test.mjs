@@ -31,5 +31,5 @@ test('returning practice users resume their exact retained draft; untrusted or o
 });
 test('startup runs synchronously before app modules read the route',()=>{
  const html=fs.readFileSync(new URL('../dist/index.html',import.meta.url),'utf8');
- assert.ok(html.indexOf('<script src="demo-startup.js"></script>')<html.indexOf('type="module" src="app.js"'));
+ assert.ok(html.indexOf('<script src="demo-startup.js"></script>')<html.search(/type="module" src="app\.js(?:\?[^"]*)?"/));
 });
