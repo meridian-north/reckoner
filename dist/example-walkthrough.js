@@ -34,7 +34,7 @@ export function installExampleWalkthrough(doc,host){
  const make=tag=>doc.createElement(tag),get=id=>doc.getElementById(id);
  const trigger=make('button');trigger.id='example-walkthrough-open';trigger.type='button';trigger.textContent='Walk me through';trigger.hidden=true;trigger.setAttribute('aria-haspopup','dialog');trigger.setAttribute('aria-controls','example-walkthrough');host.append(trigger);
  const prompt=make('section');prompt.id='example-task-prompt';prompt.hidden=true;prompt.setAttribute('aria-labelledby','example-task-question');
- const taskLabel=make('strong');taskLabel.textContent='Your task';const taskQuestion=make('p');taskQuestion.id='example-task-question';const taskHelp=make('p');taskHelp.textContent='Your reading starts as a copy of the machine text. Check the highlighted image, then change or keep that reading. Use Walk me through for hints.';prompt.append(taskLabel,taskQuestion,taskHelp);get('reading')?.prepend(prompt);
+ const taskLabel=make('strong');taskLabel.textContent='Your task';const taskQuestion=make('p');taskQuestion.id='example-task-question';const taskHelp=make('p');taskHelp.textContent='The boxed text starts as the machine reading. Edit that box only; the surrounding passage is read-only. Use Walk me through for hints.';prompt.append(taskLabel,taskQuestion,taskHelp);get('reading')?.prepend(prompt);
  const dialog=make('dialog');dialog.id='example-walkthrough';dialog.setAttribute('aria-labelledby','example-walkthrough-title');
  const heading=make('h2');heading.id='example-walkthrough-title';
  const label=make('p');label.className='helper';label.textContent='Optional hints · AI-written synthetic example';
@@ -55,7 +55,7 @@ export function installExampleWalkthrough(doc,host){
  next.addEventListener('click',()=>{if(index===steps.length-1)finish();else{index++;render();}});
  close.addEventListener('click',()=>dialog.close());
  dialog.addEventListener('keydown',event=>{if(event.key!=='Tab')return;const buttons=[previous,next,close].filter(button=>!button.disabled),first=buttons[0],last=buttons.at(-1),active=doc.activeElement;if(event.shiftKey&&(active===first||!buttons.includes(active))){event.preventDefault();last.focus();}else if(!event.shiftKey&&active===last){event.preventDefault();first.focus();}});
- dialog.addEventListener('close',()=>{if(returnToReading){get('tab-reading')?.click();get('proposed')?.focus();}else if(!trigger.hidden)trigger.focus();returnToReading=false;});
+ dialog.addEventListener('close',()=>{if(returnToReading){get('tab-reading')?.click();(get('focused-reading-input')&&!get('focused-reading')?.hidden?get('focused-reading-input'):get('proposed'))?.focus();}else if(!trigger.hidden)trigger.focus();returnToReading=false;});
  dialog.addEventListener('click',event=>{if(event.target!==dialog)return;const b=dialog.getBoundingClientRect();if(event.clientX<b.left||event.clientX>b.right||event.clientY<b.top||event.clientY>b.bottom)dialog.close();});
  doc.addEventListener('reckoner-example-changed',event=>select(event.detail?.taskId));
  select(doc.documentElement.dataset.exampleTask);

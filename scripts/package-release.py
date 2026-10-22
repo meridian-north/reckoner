@@ -6,6 +6,7 @@ import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
 FILES = (
+    'dist/focused-reading.js', 'tests/focused-reading.test.mjs',
     'dist/example-walkthrough.js', 'dist/example-walkthrough.css', 'tests/example-walkthrough.test.mjs',
     'dist/demo-startup.js', 'tests/demo-startup.test.mjs', 'tests/source-review-packs.test.mjs',
     'dist/data-module.js', 'dist/data-module.html', 'dist/data-module-ui.js', 'dist/module-intake.js', 'tests/data-module.test.mjs', 'tests/data-module-lifecycle.test.mjs', 'tests/module-intake.test.mjs', 'scripts/data-module-walkthrough.cjs', 'scripts/compact-reading-walkthrough.cjs', 'PRACTICE_DATA_MODULES.md', 'dist/reading-first.js', 'dist/text-source.js', 'tests/text-source.test.mjs', 'tests/source-preflight.test.mjs', 'scripts/source-preflight-walkthrough.cjs', 'dist/source-reading-lock.js', 'tests/source-reading-lock.test.mjs', 'dist/practice-source-pins.js', 'dist/practice-queue-entry.js', 'tests/practice-queue-entry.test.mjs', 'scripts/practice-batch-walkthrough.mjs',

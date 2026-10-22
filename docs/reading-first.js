@@ -1,4 +1,4 @@
-import {installExampleWalkthrough} from './example-walkthrough.js?v=first-view-1';
+import {installExampleWalkthrough} from './example-walkthrough.js?v=focused-reading-1';
 import {PRACTICE_TASKS} from './practice-tasks.js';
 const d=document,g=id=>d.getElementById(id),h=d.querySelector('body>header');
 const menu=d.createElement('details');menu.id='oc-tools';const s=d.createElement('summary');s.textContent='More · help & tools';const c=d.createElement('div');c.id='oc-tools-content';menu.append(s,c);h.append(menu);
@@ -144,3 +144,16 @@ const contextSave=g('save-from-context');if(contextSave){contextSave.textContent
 
 const assistanceField=g('assistance'),assistanceDetails=assistanceField?.closest('details');
 if(assistanceDetails&&contributor){assistanceDetails.open=true;contributor.closest('label').after(assistanceDetails);const label=assistanceField.previousElementSibling;if(label?.tagName==='LABEL')label.textContent='AI assistance disclosure · saved with this reading';}
+
+// Visible viewing controls reuse the existing handlers; no source bytes change.
+const imageControls=d.querySelector('.image-controls');
+if(imageControls){const bar=d.createElement('div');bar.id='visible-source-view';for(const id of ['zoom-out','zoom-level','zoom-in','zoom-reset'])if(g(id))bar.append(g(id));const whole=d.createElement('button');whole.type='button';whole.className='quiet';whole.textContent='Expand page';whole.id='expand-source-page';whole.onclick=()=>{const toggle=g('passage-loupe-toggle');if(toggle&&!toggle.closest('[hidden]'))toggle.click();g('image-stage')?.focus();};bar.append(whole);d.querySelector('.scan>.section-heading')?.after(bar);}
+
+// The focused passage belongs before reason/credit, just like the original editor.
+function placeFocusedTools(){
+ if(!g('focused-reading'))return;
+ let bar=g('visible-text-size');const label=g('reading-size')?.closest('label');
+ if(!bar&&label){bar=d.createElement('div');bar.id='visible-text-size';bar.append(label);}
+ if(bar)g('proposed').after(bar,g('focused-reading'));
+}
+d.addEventListener('reckoner-focused-ready',placeFocusedTools);placeFocusedTools();

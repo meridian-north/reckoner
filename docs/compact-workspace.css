@@ -88,11 +88,11 @@ body.document-workspace main>.advanced-tools{display:none}
 #hocr-controls details[open]{flex-basis:100%}
 
 #source-visuals{min-height:0;flex:1;display:flex}#source-visuals>#image-stage{width:100%;min-width:0}
-#passage-loupe[hidden]{display:none!important}#source-visuals.has-loupe{display:grid;grid-template-columns:minmax(45px,var(--overview-share,18%)) 12px minmax(0,1fr);gap:0}
+#passage-loupe[hidden]{display:none!important}#source-visuals.has-loupe{display:grid;grid-template-columns:minmax(45px,var(--overview-share,42%)) 12px minmax(0,1fr);gap:0}
 #source-visuals.has-loupe>#image-stage{height:100%;min-height:0;width:100%}
 #passage-loupe{display:flex;flex-direction:column;min-width:0;min-height:0;border:1px solid var(--line);background:var(--paper);padding:5px}
 #passage-loupe strong{font-size:13px}#passage-loupe-canvas{display:block;width:100%;height:100%;flex:1;min-height:80px;min-width:0}#passage-loupe-caption{font-size:11px;margin:3px 0}#passage-loupe-toggle{font-size:12px}
-@media(max-width:650px){body.document-workspace #source-visuals{height:43dvh;flex:none}body.document-workspace #reading-grid>.scan{height:auto}body.document-workspace #image-stage{height:43dvh}#source-visuals.has-loupe{grid-template-columns:minmax(45px,var(--overview-share,18%)) 12px minmax(0,1fr)}#passage-loupe strong{font-size:12px}#passage-loupe-caption{display:none}body.document-workspace #reading-grid{height:auto}}
+@media(max-width:650px){body.document-workspace #source-visuals{height:43dvh;flex:none}body.document-workspace #reading-grid>.scan{height:auto}body.document-workspace #image-stage{height:43dvh}#source-visuals.has-loupe{grid-template-columns:minmax(45px,var(--overview-share,42%)) 12px minmax(0,1fr)}#passage-loupe strong{font-size:12px}#passage-loupe-caption{display:none}body.document-workspace #reading-grid{height:auto}}
 @media print{#passage-loupe{display:none!important}#source-visuals.has-loupe{display:block}}
 
 body.document-workspace .scan:has(#source-visuals.has-loupe)>.image-controls{display:none}
@@ -266,3 +266,22 @@ body.document-workspace #reading-fields>.section-heading:first-of-type{display:n
 
 /* Visible release stage, retained with custom names and both themes. */
 .preview-stage{display:inline-block;vertical-align:middle;font:600 10px/1.2 system-ui;letter-spacing:.02em;border:1px solid currentColor;border-radius:3px;margin-left:7px;padding:2px 4px}
+
+/* Only the disputed text is editable; the rest of the passage is display text. */
+#proposed[hidden],#focused-reading[hidden]{display:none!important}
+#focused-reading-context{white-space:pre-wrap;overflow-wrap:anywhere;font:var(--focused-size,18px)/1.65 ui-monospace,monospace;padding:12px;border:1px solid var(--line);background:var(--paper)}
+#reading .transcript #focused-reading-input{display:inline-block;vertical-align:middle;box-sizing:content-box;width:3ch;max-width:calc(100% - 16px);min-height:1.65em!important;height:auto!important;resize:both;font:inherit!important;line-height:1.65!important;border:2px solid #ad5100;background:#fff4d5;padding:2px 5px!important;margin:2px;color:inherit}
+#focused-reading-help,#focused-reading-status{font-size:13px;margin:4px 0}
+#focused-reading-status:empty{display:none}
+#visible-text-size{display:flex;align-items:center;margin:6px 0}
+#visible-text-size label{display:flex;align-items:center;gap:8px;font-size:13px;margin:0}
+#visible-text-size input{width:120px;margin:0}
+#visible-source-view{display:flex;align-items:center;gap:5px;flex-wrap:wrap;margin:0 0 5px}
+#visible-source-view button{padding:3px 9px;min-height:30px;font-size:13px}
+#visible-source-view output{font-size:12px}
+
+.loupe-zoom{display:flex;align-items:center;gap:8px;font-size:12px;margin:3px 0}.loupe-zoom button{padding:2px 9px;min-height:28px}
+
+/* A glyph box must not grow to the generic button border/padding minimum. */
+body.document-workspace #passage-highlight{padding:0!important;border-width:1px;outline:1px solid #ad5100;min-width:0;min-height:0}
+#passage-highlight::before{content:"";position:absolute;inset:-8px}
